@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "lib": ["ES2015", "DOM", "ES2015.Promise"],
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "target": "es6",
+    "module":"amd",
+    "typeRoots": [
+      "src/@types"
+    ],
+    "rootDir": "src",
+    "outFile": "dist/aheeva.js"
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
