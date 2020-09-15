@@ -1,0 +1,25 @@
+{
+  "name": "app-framework",
+  "version": "1.0.0",
+  "description": "Seemlessly integrate your application with AheevaCCS",
+  "main": "dist/aheeva.min.js",
+  "dependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "rm -rf dist/* && tsc && cp -f ./dist/aheeva.js ./build/aheeva.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aheeva/app-framework.git"
+  },
+  "keywords": [],
+  "author": "Praveen Ravichandran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aheeva/app-framework/issues"
+  },
+  "homepage": "https://github.com/aheeva/app-framework#readme"
+}
