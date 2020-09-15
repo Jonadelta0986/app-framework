@@ -1,4 +1,4 @@
 interface IConfig {
-	url: string;
-	realm: string;
+  url: string;
+  realm: string;
 }
