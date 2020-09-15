@@ -1,13 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: build
+name: release
 
 on:
   push:
-    branches: [ release ]
-  pull_request:
-    branches: [ release ]
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -33,8 +32,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v0.0.1.sha${{ github.sha }}
-        release_name: Release v0.0.1.sha${{ github.sha }}
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
         draft: false
         prerelease: true
     - name: Upload Release Asset
