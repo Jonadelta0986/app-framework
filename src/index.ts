@@ -13,7 +13,7 @@ const AH = class {
 		if (url && realm) {
 			AH.url = url;
 			AH.realm = realm;
-			AH.iframe = AH.SetupIframe();
+			AH.iframe = AH.Setup();
 			console.log('Initialized Aheeva App Framework');
 		} else {
 			console.error('Fields: url, realm are required');
@@ -22,7 +22,7 @@ const AH = class {
 
 	public static HandleEvent = null;
 
-	public static SetupIframe = (): HTMLIFrameElement => {
+	private static Setup = (): HTMLIFrameElement => {
 		let iframe = document.createElement('iframe');
 		iframe.id = 'aheeva_frame';
 		iframe.setAttribute('sandbox', 'allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts');
