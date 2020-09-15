@@ -1,5 +1,5 @@
 {
-  "name": "app-framework",
+  "name": "aheeva-app-framework",
   "version": "0.0.1",
   "description": "Seemlessly integrate your application with AheevaCCS",
   "main": "dist/aheeva.min.js",
@@ -17,13 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aheeva/app-framework.git"
+    "url": "git://github.com/aheeva/aheeva-app-framework.git"
   },
   "keywords": [],
   "author": "Praveen Ravichandran",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aheeva/app-framework/issues"
+    "url": "https://github.com/aheeva/aheeva-app-framework/issues"
   },
-  "homepage": "https://github.com/aheeva/app-framework#readme"
+  "homepage": "https://github.com/aheeva/aheeva-app-framework#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com" }
 }
