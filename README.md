@@ -6,7 +6,7 @@ Seemlessly integrate your application with AheevaCCS
 ## Getting started
 ---
 
-This documentation assumes you have an existing AheevaCCS application setup at your premise or in the cloud. Please read the following information carefully. It is advised to backup your existing application before moving forward with the changes.
+This documentation assumes you have an existing AheevaCCS installation at your premise or in the cloud. Please read the following information carefully. It is advised to backup your existing application before moving forward with the changes.
 
 
 ### Steps:
@@ -37,7 +37,7 @@ function init() {
 }
 ```
 
-The above snippet of code will initialize the agent application in a hidden iframe. For agents using WebRTC, make sure the `url` field in the init configuration is `https:`. Once this step is done, you are ready to send and receive events from the Agent Application through this app-framework library.
+The above snippet of code will initialize the agent application in a hidden iframe. For agents using WebRTC, make sure the `url` field in the init configuration is `https`. Once this step is done, you are ready to send and receive events from the AheevaCCS application through this app-framework library.
 
 The following section provides description of all the events currently supported by this framework.
 
@@ -61,5 +61,34 @@ Supported list of events:
 13. ClearBlockingModes
 
 
-## Usage
----
+Usage:
+
+#### `LoginAgent`
+
+```javascript
+/**
+ * Login an agent
+ * @param username Username of the agent
+ * @param password Password of the agent
+ */
+AH.LoginAgent(username, password);
+```
+
+#### `LogoutAgent`
+
+```javascript
+/**
+ * Logout an agent
+ */
+AH.LogoutAgent();
+```
+
+#### `SetAgentStatus`
+
+```javascript
+/**
+   * Set agent status
+   * @param status Status of the agent (Allowed values: 'active', 'inactive')
+   */
+  AH.SetAgentStatus(status);
+```
