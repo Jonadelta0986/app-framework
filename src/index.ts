@@ -2,36 +2,36 @@
  * Initialize the framework
  */
 const AH = class {
-  private static url: string = "";
-  private static realm: string = "";
+  private static url: string = '';
+  private static realm: string = '';
   private static iframe: HTMLIFrameElement;
 
   public static init = (config: IConfig) => {
-    window.addEventListener("message", AH.HandleEvent, false);
+    window.addEventListener('message', AH.HandleEvent, false);
     const { url, realm } = config;
     if (url && realm) {
       AH.url = url;
       AH.realm = realm;
       AH.iframe = AH.Setup();
-      console.log("Initialized Aheeva App Framework");
+      console.log('Initialized Aheeva App Framework');
     } else {
-      console.error("Fields: url, realm are required");
+      console.error('Fields: url, realm are required');
     }
   };
 
   public static HandleEvent = null;
 
   private static Setup = (): HTMLIFrameElement => {
-    let iframe = document.createElement("iframe");
-    iframe.id = "aheeva_frame";
+    let iframe = document.createElement('iframe');
+    iframe.id = 'aheeva_frame';
     iframe.setAttribute(
-      "sandbox",
-      "allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+      'sandbox',
+      'allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts',
     );
-    iframe.setAttribute("allow", "camera;microphone");
-    iframe.style.visibility = "hidden";
-    iframe.style.position = "fixed";
-    iframe.style.zIndex = "-1";
+    iframe.setAttribute('allow', 'camera;microphone');
+    iframe.style.visibility = 'hidden';
+    iframe.style.position = 'fixed';
+    iframe.style.zIndex = '-1';
     iframe.src = `${AH.url}?${AH.realm}`;
     document.body.appendChild(iframe);
     return <HTMLIFrameElement>document.getElementById(iframe.id);
@@ -41,9 +41,9 @@ const AH = class {
     AH.iframe.contentWindow?.postMessage(
       {
         ...body,
-        requester: "AheevaAppFrameWork",
+        requester: 'AheevaAppFrameWork',
       },
-      "*"
+      '*',
     );
   };
 
@@ -54,7 +54,7 @@ const AH = class {
    */
   public static LoginAgent = (username: string, password: string): void => {
     AH.SendMessage({
-      action: "LoginAgent",
+      action: 'LoginAgent',
       message: {
         username,
         password,
@@ -68,7 +68,7 @@ const AH = class {
    */
   public static SetAgentStatus = (status: string): void => {
     AH.SendMessage({
-      action: "SetAgentStatus",
+      action: 'SetAgentStatus',
       message: {
         status,
       },
@@ -80,7 +80,7 @@ const AH = class {
    */
   public static LogoutAgent = (): void => {
     AH.SendMessage({
-      action: "LogoutAgent",
+      action: 'LogoutAgent',
     });
   };
 
@@ -89,7 +89,7 @@ const AH = class {
    */
   public static HangupAllCalls = (): void => {
     AH.SendMessage({
-      action: "HangupAllCalls",
+      action: 'HangupAllCalls',
     });
   };
 
@@ -99,7 +99,7 @@ const AH = class {
    */
   public static TransferToIVR = (IVR: string | number): void => {
     AH.SendMessage({
-      action: "TransferToIVR",
+      action: 'TransferToIVR',
       message: {
         IVR,
       },
@@ -112,7 +112,7 @@ const AH = class {
    */
   public static TransferToPhone = (phoneNumber: string | number): void => {
     AH.SendMessage({
-      action: "TransferToPhone",
+      action: 'TransferToPhone',
       message: {
         phoneNumber,
       },
@@ -125,7 +125,7 @@ const AH = class {
    */
   public static Call = (phoneNumber: string | number): void => {
     AH.SendMessage({
-      action: "Call",
+      action: 'Call',
       message: {
         phoneNumber,
       },
@@ -138,7 +138,7 @@ const AH = class {
    */
   public static ToggleCallRecordingStatus = (tracknum?: string): void => {
     AH.SendMessage({
-      action: "ToggleCallRecordingStatus",
+      action: 'ToggleCallRecordingStatus',
       message: {
         tracknum,
       },
@@ -151,7 +151,7 @@ const AH = class {
    */
   public static ToggleCallHoldStatus = (tracknum?: string): void => {
     AH.SendMessage({
-      action: "ToggleCallHoldStatus",
+      action: 'ToggleCallHoldStatus',
       message: {
         tracknum,
       },
@@ -163,10 +163,10 @@ const AH = class {
    * @param agentID Agent ID
    */
   public static SetupConferenceCallWithAgent = (
-    agentID: string | number
+    agentID: string | number,
   ): void => {
     AH.SendMessage({
-      action: "SetupConferenceCallWithAgent",
+      action: 'SetupConferenceCallWithAgent',
       message: {
         agentID,
       },
@@ -178,10 +178,10 @@ const AH = class {
    * @param phoneNumber Phone Number
    */
   public static SetupConferenceCallWithPhoneNumber = (
-    phoneNumber: string | number
+    phoneNumber: string | number,
   ): void => {
     AH.SendMessage({
-      action: "SetupConferenceCallWithAgent",
+      action: 'SetupConferenceCallWithAgent',
       message: {
         phoneNumber,
       },
@@ -193,7 +193,16 @@ const AH = class {
    */
   public static LeaveConference = (): void => {
     AH.SendMessage({
-      action: "LeaveConference",
+      action: 'LeaveConference',
+    });
+  };
+
+  /**
+   * Clear blocking modes of the status switcher
+   */
+  public static ClearBlockingModes = (): void => {
+    AH.SendMessage({
+      action: 'ClearBlockingModes',
     });
   };
 };
