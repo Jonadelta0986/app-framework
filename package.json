@@ -26,5 +26,5 @@
     "url": "https://github.com/aheeva/aheeva-app-framework/issues"
   },
   "homepage": "https://github.com/aheeva/aheeva-app-framework#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com" }
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
