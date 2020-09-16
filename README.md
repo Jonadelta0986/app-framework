@@ -90,3 +90,92 @@ AH.LogoutAgent();
  */
 AH.SetAgentStatus(status);
 ```
+
+#### HangupAllCalls
+```javascript
+/**
+ * Hang up all calls
+ */
+AH.HangupAllCalls();
+```
+
+#### TransferToIVR
+```javascript
+/**
+ * Transfer call to an IVR
+ * @param IVR IVR to transfer the call to
+ */
+AH.TransferToIVR(IVR);
+```
+
+#### TransferToPhone
+```javascript
+/**
+ * Transfer call to a phone number
+ * @param phoneNumber Phone Number
+ */
+AH.TransferToPhone(phoneNumber);
+```
+
+#### Call
+```javascript
+/**
+ * Call a phone number
+ * @param phoneNumber Phone Number
+ */
+AH.Call(phoneNumber);
+```
+
+#### ToggleCallRecordingStatus
+```javascript
+/**
+ * Toggle call recording status
+ * @param tracknum Tracking Number (optional)
+ */
+AH.ToggleCallRecordingStatus(tracknum); // With tracking number
+AH.ToggleCallRecordingStatus();			// Without tracking number
+```
+
+#### ToggleCallHoldStatus
+```javascript
+/**
+ * Toggle call hold status
+ * @param tracknum Tracking Number (optional)
+ */
+AH.ToggleCallHoldStatus(tracknum); 	// With tracking number
+AH.ToggleCallHoldStatus();			// Without tracking number
+```
+
+#### SetupConferenceCallWithAgent
+```javascript
+/**
+ * Start a conference with an agent by his/her ID
+ * @param agentID Agent ID
+ */
+AH.SetupConferenceCallWithAgent(agentID);
+```
+
+#### SetupConferenceCallWithPhoneNumber
+```javascript
+/**
+ * Start a conference with a phone number
+ * @param phoneNumber Phone Number
+ */
+AH.SetupConferenceCallWithPhoneNumber(phoneNumber);
+```
+
+#### LeaveConference
+```javascript
+/**
+ * Leave a conference
+ */
+AH.LeaveConference();
+```
+
+#### ClearBlockingModes
+```javascript
+/**
+ * Clear blocking modes of the status switcher
+ */
+AH.ClearBlockingModes();
+```

@@ -77,6 +77,15 @@ const AH = class {
   };
 
   /**
+   * Logout an agent
+   */
+  public static LogoutAgent = (): void => {
+    AH.SendMessage({
+      action: 'LogoutAgent',
+    });
+  };
+
+  /**
    * Set agent status
    * @param status Status of the agent (Allowed values: 'active', 'inactive')
    */
@@ -86,15 +95,6 @@ const AH = class {
       message: {
         status,
       },
-    });
-  };
-
-  /**
-   * Logout an agent
-   */
-  public static LogoutAgent = (): void => {
-    AH.SendMessage({
-      action: 'LogoutAgent',
     });
   };
 
