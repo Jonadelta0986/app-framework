@@ -85,8 +85,8 @@ AH.LogoutAgent();
 
 ```javascript
 /**
-   * Set agent status
-   * @param status Status of the agent (Allowed values: 'active', 'inactive')
-   */
-  AH.SetAgentStatus(status);
+ * Set agent status
+ * @param status Status of the agent (Allowed values: 'active', 'inactive')
+ */
+AH.SetAgentStatus(status);
 ```
