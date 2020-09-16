@@ -37,7 +37,7 @@ const AH = class {
     return <HTMLIFrameElement>document.getElementById(iframe.id);
   };
 
-  private static SendMessage = (body: any) => {
+  private static SendMessage = (body: any): void => {
     AH.iframe.contentWindow?.postMessage(
       {
         ...body,
@@ -72,6 +72,128 @@ const AH = class {
       message: {
         status,
       },
+    });
+  };
+
+  /**
+   * Logout an agent
+   */
+  public static LogoutAgent = (): void => {
+    AH.SendMessage({
+      action: "LogoutAgent",
+    });
+  };
+
+  /**
+   * Hang up all calls
+   */
+  public static HangupAllCalls = (): void => {
+    AH.SendMessage({
+      action: "HangupAllCalls",
+    });
+  };
+
+  /**
+   * Transfer call to an IVR
+   * @param IVR IVR to transfer the call to
+   */
+  public static TransferToIVR = (IVR: string | number): void => {
+    AH.SendMessage({
+      action: "TransferToIVR",
+      message: {
+        IVR,
+      },
+    });
+  };
+
+  /**
+   * Transfer call to a phone number
+   * @param phoneNumber Phone Number
+   */
+  public static TransferToPhone = (phoneNumber: string | number): void => {
+    AH.SendMessage({
+      action: "TransferToPhone",
+      message: {
+        phoneNumber,
+      },
+    });
+  };
+
+  /**
+   * Call a phone number
+   * @param phoneNumber Phone Number
+   */
+  public static Call = (phoneNumber: string | number): void => {
+    AH.SendMessage({
+      action: "Call",
+      message: {
+        phoneNumber,
+      },
+    });
+  };
+
+  /**
+   * Toggle call recording status
+   * @param tracknum Tracking Number (optional)
+   */
+  public static ToggleCallRecordingStatus = (tracknum?: string): void => {
+    AH.SendMessage({
+      action: "ToggleCallRecordingStatus",
+      message: {
+        tracknum,
+      },
+    });
+  };
+
+  /**
+   * Toggle call hold status
+   * @param tracknum Tracking Number (optional)
+   */
+  public static ToggleCallHoldStatus = (tracknum?: string): void => {
+    AH.SendMessage({
+      action: "ToggleCallHoldStatus",
+      message: {
+        tracknum,
+      },
+    });
+  };
+
+  /**
+   * Start a conference with an agent by his/her ID
+   * @param agentID Agent ID
+   */
+  public static SetupConferenceCallWithAgent = (
+    agentID: string | number
+  ): void => {
+    AH.SendMessage({
+      action: "SetupConferenceCallWithAgent",
+      message: {
+        agentID,
+      },
+    });
+  };
+
+  /**
+   * Start a conference with a phone number
+   * @param phoneNumber Phone Number
+   */
+  public static SetupConferenceCallWithPhoneNumber = (
+    phoneNumber: string | number
+  ): void => {
+    AH.SendMessage({
+      action: "SetupConferenceCallWithAgent",
+      message: {
+        phoneNumber,
+      },
+    });
+  };
+
+  /**
+   * Leave a conference
+   */
+  public static LeaveConference = (): void => {
+    AH.SendMessage({
+      action: "LeaveConference",
     });
   };
 };
