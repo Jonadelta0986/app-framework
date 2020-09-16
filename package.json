@@ -13,11 +13,12 @@
     "prettier": "^2.1.1"
   },
   "scripts": {
-    "build": "rm -rf dist/* && tsc"
+    "build": "rm -rf dist/* && tsc",
+    "lint": "prettier --write src"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/aheeva/app-framework.git"
+    "url": "git+https://github.com/aheeva/app-framework.git"
   },
   "keywords": [],
   "author": "Praveen Ravichandran",
