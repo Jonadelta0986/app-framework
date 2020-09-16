@@ -63,7 +63,7 @@ Supported list of events:
 
 Usage:
 
-#### `LoginAgent`
+#### LoginAgent
 
 ```javascript
 /**
@@ -74,7 +74,7 @@ Usage:
 AH.LoginAgent(username, password);
 ```
 
-#### `LogoutAgent`
+#### LogoutAgent
 
 ```javascript
 /**
@@ -83,7 +83,7 @@ AH.LoginAgent(username, password);
 AH.LogoutAgent();
 ```
 
-#### `SetAgentStatus`
+#### SetAgentStatus
 
 ```javascript
 /**
