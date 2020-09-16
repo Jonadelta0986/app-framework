@@ -195,7 +195,7 @@ const AH = class {
     phoneNumber: string | number,
   ): void => {
     AH.SendMessage({
-      action: 'SetupConferenceCallWithAgent',
+      action: 'SetupConferenceCallWithPhoneNumber',
       message: {
         phoneNumber,
       },
