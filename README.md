@@ -4,7 +4,6 @@
 Seemlessly integrate your application with AheevaCCS
 
 ## Getting started
----
 
 This documentation assumes you have an existing AheevaCCS installation at your premise or in the cloud. Please read the following information carefully. It is advised to backup your existing application before moving forward with the changes.
 
@@ -42,7 +41,6 @@ The above snippet of code will initialize the agent application in a hidden ifra
 The following section provides description of all the events currently supported by this framework.
 
 ## Events
----
 
 Supported list of events:
 
