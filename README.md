@@ -31,7 +31,7 @@ The library is extremely small (4.43KB). It should load almost instantly.
 function init() {
 	AH.init({
 		url: "YOUR_AHEEVA_AWA_URL", // example: https://awa.aheeva.com
-		realm: "YOUR_TENANT_REALM" // example: tenant1
+		realm: "YOUR_TENANT_REALM"  // example: tenant1
 	});
 }
 ```
