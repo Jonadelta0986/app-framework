@@ -133,7 +133,7 @@ AH.Call(phoneNumber);
  * @param tracknum Tracking Number (optional)
  */
 AH.ToggleCallRecordingStatus(tracknum); // With tracking number
-AH.ToggleCallRecordingStatus();			// Without tracking number
+AH.ToggleCallRecordingStatus();         // Without tracking number
 ```
 
 #### ToggleCallHoldStatus
@@ -142,8 +142,8 @@ AH.ToggleCallRecordingStatus();			// Without tracking number
  * Toggle call hold status
  * @param tracknum Tracking Number (optional)
  */
-AH.ToggleCallHoldStatus(tracknum); 	// With tracking number
-AH.ToggleCallHoldStatus();			// Without tracking number
+AH.ToggleCallHoldStatus(tracknum); // With tracking number
+AH.ToggleCallHoldStatus();         // Without tracking number
 ```
 
 #### SetupConferenceCallWithAgent
