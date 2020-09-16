@@ -1,6 +1,6 @@
 {
   "name": "@aheeva/app-framework",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Seemlessly integrate your application with AheevaCCS",
   "main": "dist/aheeva.min.js",
   "dependencies": {
