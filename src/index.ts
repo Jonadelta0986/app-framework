@@ -6,6 +6,10 @@ const AH = class {
   private static realm: string = '';
   private static iframe: HTMLIFrameElement;
 
+  /**
+   * Instantiate Aheeva App
+   * @param config App Configuration
+   */
   public static init = (config: IConfig) => {
     window.addEventListener('message', AH.HandleEvent, false);
     const { url, realm } = config;
@@ -19,8 +23,14 @@ const AH = class {
     }
   };
 
+  /**
+   * Handle New Events
+   */
   public static HandleEvent = null;
 
+  /**
+   * Setup the iframe element
+   */
   private static Setup = (): HTMLIFrameElement => {
     let iframe = document.createElement('iframe');
     iframe.id = 'aheeva_frame';
@@ -37,6 +47,10 @@ const AH = class {
     return <HTMLIFrameElement>document.getElementById(iframe.id);
   };
 
+  /**
+   * Send event to Aheeva App
+   * @param body Body of the event
+   */
   private static SendMessage = (body: any): void => {
     AH.iframe.contentWindow?.postMessage(
       {
