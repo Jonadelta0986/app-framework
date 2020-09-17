@@ -22,7 +22,7 @@ This documentation assumes you have an existing AheevaCCS installation at your p
 </head>
 ```
 
-The library is extremely small (4.43KB). It should load almost instantly.
+The library is extremely small ~2.0 KB (minified). It should load almost instantly.
 
 2. Initialize the framework as follows
 
