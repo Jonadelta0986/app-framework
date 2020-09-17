@@ -1,7 +1,9 @@
+import { IConfig } from "./models/IConfig";
+
 /**
  * Initialize the framework
  */
-const AH = class {
+export class AH {
   private static url: string = '';
   private static realm: string = '';
   private static iframe: HTMLIFrameElement;
@@ -26,7 +28,9 @@ const AH = class {
   /**
    * Handle New Events
    */
-  public static HandleEvent = null;
+  public static HandleEvent = (event: any) => {
+    console.log(event);
+  };
 
   /**
    * Setup the iframe element
@@ -264,6 +268,5 @@ const AH = class {
       }
     });
   };
-
 
 };
