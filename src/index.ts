@@ -219,4 +219,51 @@ const AH = class {
       action: 'ClearBlockingModes',
     });
   };
+
+  /**
+   * Get list of messages
+   * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param filter Filter (Allowed values: 'READ', 'UNREAD', 'ALL')
+   */
+  public static GetMessages = (channelType: string = 'ALL', filter: string = 'ALL'): void => {
+    AH.SendMessage({
+      action: 'GetMessages',
+      message: {
+        channelType,
+        filter
+      }
+    });
+  };
+
+  /**
+   * Compose an Outbound Email
+   * @param recipient Recipient
+   * @param text Message body
+   */
+  public static ComposeEmailMessage = (recipient: string, text: string): void => {
+    AH.SendMessage({
+      action: 'ComposeEmailMessage',
+      message: {
+        recipient,
+        text
+      }
+    });
+  };
+
+  /**
+   * Compose an Outbound SMS
+   * @param recipient Recipient
+   * @param text Message body
+   */
+  public static ComposeSMSMessage = (recipient: string, text: string): void => {
+    AH.SendMessage({
+      action: 'ComposeSMSMessage',
+      message: {
+        recipient,
+        text
+      }
+    });
+  };
+
+
 };
