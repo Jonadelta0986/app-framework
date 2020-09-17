@@ -1,4 +1,4 @@
-import { IConfig } from "./models/IConfig";
+import { IConfig } from './models/IConfig';
 
 /**
  * Initialize the framework
@@ -229,13 +229,16 @@ export class AH {
    * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param filter Filter (Allowed values: 'READ', 'UNREAD', 'ALL')
    */
-  public static GetMessages = (channelType: string = 'ALL', filter: string = 'ALL'): void => {
+  public static GetMessages = (
+    channelType: string = 'ALL',
+    filter: string = 'ALL',
+  ): void => {
     AH.SendMessage({
       action: 'GetMessages',
       message: {
         channelType,
-        filter
-      }
+        filter,
+      },
     });
   };
 
@@ -244,13 +247,16 @@ export class AH {
    * @param recipient Recipient
    * @param text Message body
    */
-  public static ComposeEmailMessage = (recipient: string, text: string): void => {
+  public static ComposeEmailMessage = (
+    recipient: string,
+    text: string,
+  ): void => {
     AH.SendMessage({
       action: 'ComposeEmailMessage',
       message: {
         recipient,
-        text
-      }
+        text,
+      },
     });
   };
 
@@ -264,9 +270,8 @@ export class AH {
       action: 'ComposeSMSMessage',
       message: {
         recipient,
-        text
-      }
+        text,
+      },
     });
   };
-
-};
+}

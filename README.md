@@ -1,4 +1,5 @@
 # app-framework
+
 ![build](https://github.com/aheeva/app-framework/workflows/build/badge.svg) ![release](https://github.com/aheeva/app-framework/workflows/release/badge.svg)
 
 Seemlessly integrate AheevaCCS into your application, written in TypeScript
@@ -7,18 +8,15 @@ Seemlessly integrate AheevaCCS into your application, written in TypeScript
 
 This documentation assumes you have an existing AheevaCCS installation at your premise or in the cloud. Please read the following information carefully. It is advised to backup your existing application before moving forward with the changes.
 
-
 ### Steps:
 
 1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page.
 
 ```html
 <head>
-
-...
-<script src="path/to/aheeva.min.js"></script>
-...
-
+  ...
+  <script src="path/to/aheeva.min.js"></script>
+  ...
 </head>
 ```
 
@@ -29,10 +27,10 @@ The library is extremely small ~2.0 KB (minified). It should load almost instant
 ```javascript
 // Some function in your application that deals with the setup process
 function init() {
-	AH.init({
-		url: "YOUR_AHEEVA_AWA_URL", // example: https://awa.aheeva.com
-		realm: "YOUR_TENANT_REALM"  // example: tenant1
-	});
+  AH.init({
+    url: 'YOUR_AHEEVA_AWA_URL', // example: https://awa.aheeva.com
+    realm: 'YOUR_TENANT_REALM', // example: tenant1
+  });
 }
 ```
 
@@ -57,7 +55,6 @@ Supported list of events:
 11. SetupConferenceCallWithPhoneNumber
 12. LeaveConference
 13. ClearBlockingModes
-
 
 Usage:
 
@@ -92,6 +89,7 @@ AH.SetAgentStatus(status);
 ```
 
 #### HangupAllCalls
+
 ```javascript
 /**
  * Hang up all calls
@@ -100,6 +98,7 @@ AH.HangupAllCalls();
 ```
 
 #### TransferToIVR
+
 ```javascript
 /**
  * Transfer call to an IVR
@@ -109,6 +108,7 @@ AH.TransferToIVR(IVR);
 ```
 
 #### TransferToPhone
+
 ```javascript
 /**
  * Transfer call to a phone number
@@ -118,6 +118,7 @@ AH.TransferToPhone(phoneNumber);
 ```
 
 #### Call
+
 ```javascript
 /**
  * Call a phone number
@@ -127,26 +128,29 @@ AH.Call(phoneNumber);
 ```
 
 #### ToggleCallRecordingStatus
+
 ```javascript
 /**
  * Toggle call recording status
  * @param tracknum Tracking Number (optional)
  */
 AH.ToggleCallRecordingStatus(tracknum); // With tracking number
-AH.ToggleCallRecordingStatus();         // Without tracking number
+AH.ToggleCallRecordingStatus(); // Without tracking number
 ```
 
 #### ToggleCallHoldStatus
+
 ```javascript
 /**
  * Toggle call hold status
  * @param tracknum Tracking Number (optional)
  */
 AH.ToggleCallHoldStatus(tracknum); // With tracking number
-AH.ToggleCallHoldStatus();         // Without tracking number
+AH.ToggleCallHoldStatus(); // Without tracking number
 ```
 
 #### SetupConferenceCallWithAgent
+
 ```javascript
 /**
  * Start a conference with an agent by his/her ID
@@ -156,6 +160,7 @@ AH.SetupConferenceCallWithAgent(agentID);
 ```
 
 #### SetupConferenceCallWithPhoneNumber
+
 ```javascript
 /**
  * Start a conference with a phone number
@@ -165,6 +170,7 @@ AH.SetupConferenceCallWithPhoneNumber(phoneNumber);
 ```
 
 #### LeaveConference
+
 ```javascript
 /**
  * Leave a conference
@@ -173,6 +179,7 @@ AH.LeaveConference();
 ```
 
 #### ClearBlockingModes
+
 ```javascript
 /**
  * Clear blocking modes of the status switcher

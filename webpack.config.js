@@ -12,8 +12,8 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [ '.ts' ],
-	},
+    extensions: ['.ts'],
+  },
   mode: 'production',
   output: {
     filename: 'aheeva.min.js',
