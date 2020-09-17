@@ -1,7 +1,7 @@
 {
   "name": "@aheeva/app-framework",
   "version": "0.0.5",
-  "description": "Seemlessly integrate your application with AheevaCCS",
+  "description": "Seemlessly integrate your application with AheevaCCS, written in TypeScript",
   "main": "dist/aheeva.min.js",
   "dependencies": {
     "tslint": "^6.1.3",
