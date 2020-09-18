@@ -12,14 +12,14 @@ button {
 
 .tab {
   display: none;
-  height: calc(100vh - 50px - 300px);
+  height: calc(100vh - 50px - 326px);
   position: fixed;
   top: 50px;
   left: 0;
   width: 100vw;
 }
 
-#console {
+#console, #console-title {
   font-size: 12px;
   font-weight: light;
   white-space: nowrap;
