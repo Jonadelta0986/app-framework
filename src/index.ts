@@ -14,6 +14,10 @@ export class AH {
    * @param config App Configuration
    */
   public static init = (config: IConfig) => {
+    if (!(window as any).isListenerSet) {
+      window.addEventListener('message', AH.HandleEvent, false);
+      (window as any).isListenerSet = true;
+    }
     const { url, realm, elementId, hidden } = config;
     if (url && realm) {
       AH.url = url;
@@ -24,7 +28,6 @@ export class AH {
       }
       AH.iframe = AH.Setup();
       console.log('Initialized Aheeva App Framework');
-      AH.iframe.addEventListener('message', AH.HandleEvent, true);
     } else {
       console.error('Fields: url, realm are required');
     }
