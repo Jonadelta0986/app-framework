@@ -308,6 +308,28 @@ export class AH {
   };
 
   /**
+   * Get current list of calls
+   * @param requestId Request UUID
+   */
+  public static GetCurrentCallList = (requestId: string): void => {
+    AH.SendMessage({
+      requestId,
+      action: 'GetCurrentCallList',
+    });
+  };
+
+    /**
+   * Get history of calls handled
+   * @param requestId Request UUID
+   */
+  public static GetCallHistory = (requestId: string): void => {
+    AH.SendMessage({
+      requestId,
+      action: 'GetCallHistory',
+    });
+  };
+
+  /**
    * Get list of messages
    * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
    */

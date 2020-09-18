@@ -24,7 +24,8 @@ function setTab(tab) {
 }
 
 function generateRequestId() {
-  return new Date().getTime();
+  return uuidv4(); // Use if UUID module is imported; else use timestamp as id.
+  //return new Date().getTime();
 }
 
 function setupAH() {
@@ -91,6 +92,14 @@ function LeaveConference() {
 
 function ClearBlockingModes() {
   AH.ClearBlockingModes(generateRequestId());
+}
+
+function GetCurrentCallList() {
+  AH.GetCurrentCallList(generateRequestId());
+}
+
+function GetCallHistory() {
+  AH.GetCallHistory(generateRequestId());
 }
 
 function GetMessages(channelType) {
