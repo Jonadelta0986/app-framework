@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Framework Example</title>
+  <link rel="stylesheet" href="./bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Your application scripts go here -->
+  <script src="./scripts.js"></script>
+
+  <!-- Place the following at the end of the <head> tag -->
+  <script src="./aheeva.min.js"></script>
+</head>
+
+<body onload="setupAH()">
+
+  <div class="bg-danger w-100 d-flex flex-row align-items-center justify-content-center flex-wrap"
+    style="height: 50px;">
+
+    <div class="p-2">
+      <button onclick="setTab('general')" class="btn btn-sm btn-light">
+        General
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('calls')" class="btn btn-sm btn-light">
+        Calls
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('email')" class="btn btn-sm btn-light">
+        Email
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('sms')" class="btn btn-sm btn-light">
+        SMS
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('whatsapp')" class="btn btn-sm btn-light">
+        WhatsApp
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('twitter')" class="btn btn-sm btn-light">
+        Twitter
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('facebook')" class="btn btn-sm btn-light">
+        Facebook
+      </button>
+    </div>
+
+    <div class="p-2">
+      <button onclick="setTab('aheeva')" class="btn btn-sm btn-light">
+        Iframe
+      </button>
+    </div>
+
+  </div>
+
+  <div id="general" class="bg-light tab">
+
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="LoginAgent('5555', '5555')" class="btn btn-sm btn-dark">
+            LoginAgent
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="LogoutAgent()" class="btn btn-sm btn-dark">
+            LogoutAgent
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="GetCurrentUser()" class="btn btn-sm btn-dark">
+            GetCurrentUser
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="SetAgentStatus('active')" class="btn btn-sm btn-dark">
+            SetAgentStatus: Ready
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="SetAgentStatus('inactive')" class="btn btn-sm btn-dark">
+            SetAgentStatus: Not Ready
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="calls" class="bg-light tab">
+
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="HangupAllCalls()" class="btn btn-sm btn-dark">
+            HangupAllCalls
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="TransferToIVR('9001')" class="btn btn-sm btn-dark">
+            TransferToIVR
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="TransferToPhone('55777')" class="btn btn-sm btn-dark">
+            TransferToPhone
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="Call('9999')" class="btn btn-sm btn-dark">
+            Call
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="ToggleCallRecordingStatus()" class="btn btn-sm btn-dark">
+            ToggleCallRecordingStatus
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="ToggleCallHoldStatus()" class="btn btn-sm btn-dark">
+            ToggleCallHoldStatus
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="SetupConferenceCallWithAgent('6666')" class="btn btn-sm btn-dark">
+            SetupConferenceCallWithAgent
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="SetupConferenceCallWithPhoneNumber('55777')" class="btn btn-sm btn-dark">
+            SetupConferenceCallWithPhoneNumber
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="LeaveConference()" class="btn btn-sm btn-dark">
+            LeaveConference
+          </button>
+        </div>
+
+        <div class="m-2">
+          <button onclick="ClearBlockingModes()" class="btn btn-sm btn-dark">
+            ClearBlockingModes
+          </button>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="email" class="bg-light tab">
+
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="GetMessages('Email')" class="btn btn-sm btn-dark">
+            GetMessages (Email)
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="sms" class="bg-light tab">
+    
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="GetMessages('SMS')" class="btn btn-sm btn-dark">
+            GetMessages (SMS)
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="whatsapp" class="bg-light tab">
+
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="GetMessages('WhatsApp')" class="btn btn-sm btn-dark">
+            GetMessages (WhatsApp)
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="twitter" class="bg-light tab">
+
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="GetMessages('Twitter')" class="btn btn-sm btn-dark">
+            GetMessages (Twitter)
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="facebook" class="bg-light tab">
+
+    <div class="m-2 p-2 border">
+      Actions:
+
+      <div class="m-2 d-flex flex-wrap">
+
+        <div class="m-2">
+          <button onclick="GetMessages('Facebook')" class="btn btn-sm btn-dark">
+            GetMessages (Facebook)
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="aheeva" class="bg-light tab">
+  </div>
+
+  <div id="console" class="bg-dark fixed-bottom text-light" style="height: 300px; overflow-y: auto;">
+    <div class="p-1 bg-danger sticky-top" style="width: 100%;">
+      Console
+    </div>
+  </div>
+
+</body>
+
+</html>

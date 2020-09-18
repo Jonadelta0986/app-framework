@@ -1,0 +1,26 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+button {
+  min-width: 100px;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.tab {
+  display: none;
+  height: calc(100vh - 50px - 300px);
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100vw;
+}
+
+#console {
+  font-size: 12px;
+  font-weight: light;
+  white-space: nowrap;
+}

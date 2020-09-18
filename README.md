@@ -26,7 +26,7 @@ The library is extremely small ~2.0 KB (minified). It should load almost instant
 
 ```javascript
 // Some function in your application that deals with the setup process
-function init() {
+function setupAH() {
   AH.init({
     url: 'YOUR_AHEEVA_AWA_URL', // example: https://awa.aheeva.com
     realm: 'YOUR_TENANT_REALM', // example: tenant1
