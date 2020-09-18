@@ -42,10 +42,10 @@ export class AH {
     if (text.indexOf('WakeUp') == -1) {
       try {
         let d = document.createElement('div');
-        d.innerText = `${new Date().toISOString()}: ${JSON.stringify({ module, eventType, direction, message, response })}`;
+        d.innerText = `↑ ${new Date().toISOString()}: ${JSON.stringify({ module, eventType, direction, message, response })}`;
         let console = document.getElementById('console');
         if (console) {
-          console.appendChild(d);
+          console.insertBefore(d, console.firstChild);
         }
       } catch (error) {
         console.error(error);
