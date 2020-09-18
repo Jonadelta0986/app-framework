@@ -319,6 +319,20 @@ export class AH {
   };
 
   /**
+   * Get list of accounts
+   * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   */
+  public static GetAccounts = (channelType: string, requestId: string): void => {
+    AH.SendMessage({
+      requestId,
+      action: 'GetAccounts',
+      message: {
+        channelType,
+      }
+    });
+  };
+
+  /**
    * Compose an Outbound Email
    * @param recipient Recipient
    * @param text Message body

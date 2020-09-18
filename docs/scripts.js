@@ -96,3 +96,7 @@ function ClearBlockingModes() {
 function GetMessages(channelType) {
   AH.GetMessages(channelType, generateRequestId());
 }
+
+function GetAccounts(channelType) {
+  AH.GetAccounts(channelType, generateRequestId());
+}
