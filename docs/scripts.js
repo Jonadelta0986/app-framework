@@ -42,7 +42,7 @@ function LoginAgent(username, password) {
 }
 
 function LogoutAgent() {
-  AH.LogoutAgent();
+  AH.LogoutAgent(generateRequestId());
 }
 
 function GetCurrentUser() {
