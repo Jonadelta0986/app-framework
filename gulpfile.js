@@ -7,5 +7,5 @@ gulp.task('clean', () => {
 });
 
 gulp.task('copy', () => {
-  return gulp.src('dist/*.js').pipe(gulp.dest('example'));
+  return gulp.src('dist/*.js').pipe(gulp.dest('docs'));
 });
