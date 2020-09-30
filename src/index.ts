@@ -427,4 +427,37 @@ export class AH {
       },
     });
   };
+
+  public static MarkInteractionAsRead = (
+    interactionID: string,
+    requestId: string
+  ) => {
+    AH.SendMessage({
+      requestId,
+      action: 'MarkInteractionAsRead',
+      message: {
+        interactionID
+      },
+    });
+  }
+
+  public static AddInteraction = (
+    threadID: string,
+    interactionID: string,
+    to: any,
+    text: string,
+    requestId: string
+  ) => {
+    AH.SendMessage({
+      requestId,
+      action: 'AddInteraction',
+      message: {
+        threadID,
+        interactionID,
+        to,
+        text,
+      },
+    });
+  }
+
 }

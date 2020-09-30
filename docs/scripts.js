@@ -149,3 +149,11 @@ function ComposeEmailMessage(
     generateRequestId(),
   )
 }
+
+function MarkInteractionAsRead(interactionID) {
+  AH.MarkInteractionAsRead(interactionID, generateRequestId());
+}
+
+function AddInteraction(threadID, interactionID, to, text) {
+  AH.AddInteraction(threadID, interactionID, to, text, generateRequestId());
+}
