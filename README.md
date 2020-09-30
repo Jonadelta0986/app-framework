@@ -268,7 +268,7 @@ AH.ComposeSMSMessage(recipient, firstName, lastName, text, channelAccountID, req
 
 ```javascript
 /**
- * Mark interaction as read
+ * Mark Interaction As Read
  * @param {String} interactionID Interaction ID
  * @param {String} requestId Request UUID
  */
@@ -278,12 +278,12 @@ AH.MarkInteractionAsRead(interactionID, requestId);
 
 ```javascript
 /**
- * Add interation
+ * Add Interation/Reply
  * @param {String} threadID Thread ID
  * @param {String} interactionID Interaction ID
  * @param {String} to To address (required only for email)
  * @param {String} text Message body
  * @param {String} requestId Request UUID
  */
-AH.AddInteraction(threadID, interactionID, to: any, text, requestId);
+AH.AddInteraction(threadID, interactionID, to, text, requestId);
 ```
