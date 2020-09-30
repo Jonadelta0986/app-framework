@@ -60,7 +60,7 @@ Usage:
 
 #### Login an agent
 
-```
+```javascript
 /**
  * Login an agent
  * @param {String} username Username of the agent
@@ -71,7 +71,7 @@ AH.LoginAgent(username, password, requestId);
 ```
 #### Logout an agent
 
-```
+```javascript
 /**
  * Logout an agent
  * @param {String} requestId Request UUID
@@ -80,7 +80,7 @@ AH.LogoutAgent(requestId);
 ```
 #### Get Current User Details
 
-```
+```javascript
 /**
  * Get Current User Details
  * @param {String} requestId Request UUID
@@ -89,7 +89,7 @@ AH.GetCurrentUser(requestId);
 ```
 #### Set agent status
 
-```
+```javascript
 /**
  * Set agent status
  * @param {String} status Status of the agent (Allowed values: 'active', 'inactive')
@@ -99,7 +99,7 @@ AH.SetAgentStatus(status, reason, requestId);
 ```
 #### Hang up all calls
 
-```
+```javascript
 /**
  * Hang up all calls
  * @param {String} requestId Request UUID
@@ -108,7 +108,7 @@ AH.HangupAllCalls(requestId);
 ```
 #### Transfer call to an IVR
 
-```
+```javascript
 /**
  * Transfer call to an IVR
  * @param {String} IVR IVR to transfer the call to
@@ -118,7 +118,7 @@ AH.TransferToIVR(IVR, requestId);
 ```
 #### Transfer call to a phone number
 
-```
+```javascript
 /**
  * Transfer call to a phone number
  * @param {String} phoneNumber Phone Number
@@ -128,7 +128,7 @@ AH.TransferToPhone(phoneNumber, requestId);
 ```
 #### Call a phone number
 
-```
+```javascript
 /**
  * Call a phone number
  * @param {String} phoneNumber Phone Number
@@ -138,7 +138,7 @@ AH.Call(phoneNumber, requestId);
 ```
 #### Toggle call recording status
 
-```
+```javascript
 /**
  * Toggle call recording status
  * @param {String} requestId Request UUID
@@ -148,7 +148,7 @@ AH.ToggleCallRecordingStatus(requestId, tracknum);
 ```
 #### Toggle call hold status
 
-```
+```javascript
 /**
  * Toggle call hold status
  * @param {String} requestId Request UUID
@@ -158,7 +158,7 @@ AH.ToggleCallHoldStatus(requestId, tracknum);
 ```
 #### Start a conference with an agent by his/her ID
 
-```
+```javascript
 /**
  * Start a conference with an agent by his/her ID
  * @param {String} agentID Agent ID
@@ -168,7 +168,7 @@ AH.SetupConferenceCallWithAgent(agentID, requestId);
 ```
 #### Start a conference with a phone number
 
-```
+```javascript
 /**
  * Start a conference with a phone number
  * @param {String} phoneNumber Phone Number
@@ -178,7 +178,7 @@ AH.SetupConferenceCallWithPhoneNumber(phoneNumber, requestId);
 ```
 #### Leave a conference
 
-```
+```javascript
 /**
  * Leave a conference
  * @param {String} requestId Request UUID
@@ -187,7 +187,7 @@ AH.LeaveConference(requestId);
 ```
 #### Clear blocking modes of the status switcher
 
-```
+```javascript
 /**
  * Clear blocking modes of the status switcher
  * @param {String} requestId Request UUID
@@ -196,7 +196,7 @@ AH.ClearBlockingModes(requestId);
 ```
 #### Get current list of calls
 
-```
+```javascript
 /**
  * Get current list of calls
  * @param {String} requestId Request UUID
@@ -205,7 +205,7 @@ AH.GetCurrentCallList(requestId);
 ```
 #### Get history of calls handled
 
-```
+```javascript
 /**
 * Get history of calls handled
 * @param {String} requestId Request UUID
@@ -214,7 +214,7 @@ AH.GetCallHistory(requestId);
 ```
 #### Get list of messages
 
-```
+```javascript
 /**
  * Get list of messages
  * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
@@ -224,7 +224,7 @@ AH.GetMessages(channelType, requestId);
 ```
 #### Get list of accounts
 
-```
+```javascript
 /**
  * Get list of accounts
  * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
@@ -234,7 +234,7 @@ AH.GetAccounts(channelType, requestId);
 ```
 #### Create Outbound Email
 
-```
+```javascript
 /**
  * Create Outbound Email
  * @param {String} recipient Recipient email address
@@ -251,7 +251,7 @@ AH.ComposeEmailMessage(recipient, firstName, lastName, subject, cc, bcc, text, c
 ```
 #### Create Outbound SMS
 
-```
+```javascript
 /**
  * Create Outbound SMS
  * @param {String} recipient Recipient Phone Number
@@ -265,7 +265,7 @@ AH.ComposeSMSMessage(recipient, firstName, lastName, text, channelAccountID, req
 ```
 #### Mark interaction as read
 
-```
+```javascript
 /**
  * Mark interaction as read
  * @param {String} interactionID Interaction ID
@@ -275,7 +275,7 @@ AH.MarkInteractionAsRead(interactionID, requestId);
 ```
 #### Add interation
 
-```
+```javascript
 /**
  * Add interation
  * @param {String} threadID Thread ID
