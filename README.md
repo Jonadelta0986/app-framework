@@ -44,17 +44,26 @@ Supported list of events:
 
 1. LoginAgent
 2. LogoutAgent
-3. SetAgentStatus
-4. HangupAllCalls
-5. TransferToIVR
-6. TransferToPhone
-7. Call
-8. ToggleCallRecordingStatus
-9. ToggleCallHoldStatus
-10. SetupConferenceCallWithAgent
-11. SetupConferenceCallWithPhoneNumber
-12. LeaveConference
-13. ClearBlockingModes
+3. AddInteraction
+4. SetAgentStatus
+5. HangupAllCalls
+6. TransferToIVR
+7. TransferToPhone
+8. Call
+9. ToggleCallRecordingStatus
+10. ToggleCallHoldStatus
+11. SetupConferenceCallWithAgent
+12. SetupConferenceCallWithPhoneNumber
+13. LeaveConference
+14. ClearBlockingModes
+15. GetCurrentCallList
+16. GetCallHistory
+17. GetMessages
+18. GetAccounts
+19. ComposeEmailMessage
+20. ComposeSMSMessage
+21. MarkInteractionAsRead
+22. AddInteraction
 
 Usage:
 
