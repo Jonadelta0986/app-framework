@@ -9,3 +9,7 @@ gulp.task('clean', () => {
 gulp.task('copy', () => {
   return gulp.src('dist/*.js').pipe(gulp.dest('docs'));
 });
+
+gulp.task('copy-types', () => {
+  return gulp.src('dist/index.d.ts').pipe(gulp.dest('src'));
+});

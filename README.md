@@ -58,131 +58,231 @@ Supported list of events:
 
 Usage:
 
-#### LoginAgent
+#### Login an agent
 
-```javascript
+```
 /**
  * Login an agent
- * @param username Username of the agent
- * @param password Password of the agent
+ * @param {String} username Username of the agent
+ * @param {String} password Password of the agent
+ * @param {String} requestId Request UUID
  */
-AH.LoginAgent(username, password);
+AH.LoginAgent(username, password, requestId);
 ```
+#### Logout an agent
 
-#### LogoutAgent
-
-```javascript
+```
 /**
  * Logout an agent
+ * @param {String} requestId Request UUID
  */
-AH.LogoutAgent();
+AH.LogoutAgent(requestId);
 ```
+#### Get Current User Details
 
-#### SetAgentStatus
+```
+/**
+ * Get Current User Details
+ * @param {String} requestId Request UUID
+ */
+AH.GetCurrentUser(requestId);
+```
+#### Set agent status
 
-```javascript
+```
 /**
  * Set agent status
- * @param status Status of the agent (Allowed values: 'active', 'inactive')
+ * @param {String} status Status of the agent (Allowed values: 'active', 'inactive')
+ * @param {String} requestId Request UUID
  */
-AH.SetAgentStatus(status);
+AH.SetAgentStatus(status, reason, requestId);
 ```
+#### Hang up all calls
 
-#### HangupAllCalls
-
-```javascript
+```
 /**
  * Hang up all calls
+ * @param {String} requestId Request UUID
  */
-AH.HangupAllCalls();
+AH.HangupAllCalls(requestId);
 ```
+#### Transfer call to an IVR
 
-#### TransferToIVR
-
-```javascript
+```
 /**
  * Transfer call to an IVR
- * @param IVR IVR to transfer the call to
+ * @param {String} IVR IVR to transfer the call to
+ * @param {String} requestId Request UUID
  */
-AH.TransferToIVR(IVR);
+AH.TransferToIVR(IVR, requestId);
 ```
+#### Transfer call to a phone number
 
-#### TransferToPhone
-
-```javascript
+```
 /**
  * Transfer call to a phone number
- * @param phoneNumber Phone Number
+ * @param {String} phoneNumber Phone Number
+ * @param {String} requestId Request UUID
  */
-AH.TransferToPhone(phoneNumber);
+AH.TransferToPhone(phoneNumber, requestId);
 ```
+#### Call a phone number
 
-#### Call
-
-```javascript
+```
 /**
  * Call a phone number
- * @param phoneNumber Phone Number
+ * @param {String} phoneNumber Phone Number
+ * @param {String} requestId Request UUID
  */
-AH.Call(phoneNumber);
+AH.Call(phoneNumber, requestId);
 ```
+#### Toggle call recording status
 
-#### ToggleCallRecordingStatus
-
-```javascript
+```
 /**
  * Toggle call recording status
- * @param tracknum Tracking Number (optional)
+ * @param {String} requestId Request UUID
+ * @param {String} tracknum Tracking Number (optional)
  */
-AH.ToggleCallRecordingStatus(tracknum); // With tracking number
-AH.ToggleCallRecordingStatus(); // Without tracking number
+AH.ToggleCallRecordingStatus(requestId, tracknum);
 ```
+#### Toggle call hold status
 
-#### ToggleCallHoldStatus
-
-```javascript
+```
 /**
  * Toggle call hold status
- * @param tracknum Tracking Number (optional)
+ * @param {String} requestId Request UUID
+ * @param {String} tracknum Tracking Number (optional)
  */
-AH.ToggleCallHoldStatus(tracknum); // With tracking number
-AH.ToggleCallHoldStatus(); // Without tracking number
+AH.ToggleCallHoldStatus(requestId, tracknum);
 ```
+#### Start a conference with an agent by his/her ID
 
-#### SetupConferenceCallWithAgent
-
-```javascript
+```
 /**
  * Start a conference with an agent by his/her ID
- * @param agentID Agent ID
+ * @param {String} agentID Agent ID
+ * @param {String} requestId Request UUID
  */
-AH.SetupConferenceCallWithAgent(agentID);
+AH.SetupConferenceCallWithAgent(agentID, requestId);
 ```
+#### Start a conference with a phone number
 
-#### SetupConferenceCallWithPhoneNumber
-
-```javascript
+```
 /**
  * Start a conference with a phone number
- * @param phoneNumber Phone Number
+ * @param {String} phoneNumber Phone Number
+ * @param {String} requestId Request UUID
  */
-AH.SetupConferenceCallWithPhoneNumber(phoneNumber);
+AH.SetupConferenceCallWithPhoneNumber(phoneNumber, requestId);
 ```
+#### Leave a conference
 
-#### LeaveConference
-
-```javascript
+```
 /**
  * Leave a conference
+ * @param {String} requestId Request UUID
  */
-AH.LeaveConference();
+AH.LeaveConference(requestId);
 ```
+#### Clear blocking modes of the status switcher
 
-#### ClearBlockingModes
-
-```javascript
+```
 /**
  * Clear blocking modes of the status switcher
+ * @param {String} requestId Request UUID
  */
-AH.ClearBlockingModes();
+AH.ClearBlockingModes(requestId);
+```
+#### Get current list of calls
+
+```
+/**
+ * Get current list of calls
+ * @param {String} requestId Request UUID
+ */
+AH.GetCurrentCallList(requestId);
+```
+#### Get history of calls handled
+
+```
+/**
+* Get history of calls handled
+* @param {String} requestId Request UUID
+*/
+AH.GetCallHistory(requestId);
+```
+#### Get list of messages
+
+```
+/**
+ * Get list of messages
+ * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+ * @param {String} requestId Request UUID
+ */
+AH.GetMessages(channelType, requestId);
+```
+#### Get list of accounts
+
+```
+/**
+ * Get list of accounts
+ * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+ * @param {String} requestId Request UUID
+ */
+AH.GetAccounts(channelType, requestId);
+```
+#### Create Outbound Email
+
+```
+/**
+ * Create Outbound Email
+ * @param {String} recipient Recipient email address
+ * @param {String} firstName First Name of the recipient
+ * @param {String} lastName Last Name of the recipient
+ * @param {String} subject Subject
+ * @param {String} cc CC
+ * @param {String} bcc BCC
+ * @param {String} text Message body
+ * @param {String} channelAccountID Channel Account to use
+ * @param {String} requestId Request UUID
+ */
+AH.ComposeEmailMessage(recipient, firstName, lastName, subject, cc, bcc, text, channelAccountID, requestId);
+```
+#### Create Outbound SMS
+
+```
+/**
+ * Create Outbound SMS
+ * @param {String} recipient Recipient Phone Number
+ * @param {String} firstName First Name of the recipient
+ * @param {String} lastName Last Name of the recipient
+ * @param {String} text Message Body
+ * @param {String} channelAccountID Channel Account to use
+ * @param {String} requestId Request ID
+ */
+AH.ComposeSMSMessage(recipient, firstName, lastName, text, channelAccountID, requestId);
+```
+#### Mark interaction as read
+
+```
+/**
+ * Mark interaction as read
+ * @param {String} interactionID Interaction ID
+ * @param {String} requestId Request UUID
+ */
+AH.MarkInteractionAsRead(interactionID, requestId);
+```
+#### Add interation
+
+```
+/**
+ * Add interation
+ * @param {String} threadID Thread ID
+ * @param {String} interactionID Interaction ID
+ * @param {String} to To address (required only for email)
+ * @param {String} text Message body
+ * @param {String} requestId Request UUID
+ */
+AH.AddInteraction(threadID, interactionID, to: any, text, requestId);
 ```

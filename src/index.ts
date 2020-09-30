@@ -11,7 +11,7 @@ export class AH {
   private static elementId: string = 'body';
   /**
    * Instantiate Aheeva App
-   * @param config App Configuration
+   * @param {String} config App Configuration
    */
   public static init = (config: IConfig) => {
     if (!(window as any).isListenerSet) {
@@ -78,7 +78,7 @@ export class AH {
 
   /**
    * Send event to Aheeva App
-   * @param body Body of the event
+   * @param {String} body Body of the event
    */
   private static SendMessage = (body: any): void => {
     AH.iframe.contentWindow?.postMessage(
@@ -92,9 +92,9 @@ export class AH {
 
   /**
    * Login an agent
-   * @param username Username of the agent
-   * @param password Password of the agent
-   * @param requestId Request UUID
+   * @param {String} username Username of the agent
+   * @param {String} password Password of the agent
+   * @param {String} requestId Request UUID
    */
   public static LoginAgent = (
     username: string,
@@ -113,7 +113,7 @@ export class AH {
 
   /**
    * Logout an agent
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static LogoutAgent = (requestId: string): void => {
     AH.SendMessage({
@@ -124,7 +124,7 @@ export class AH {
 
   /**
    * Get Current User Details
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static GetCurrentUser = (requestId: string): void => {
     AH.SendMessage({
@@ -135,8 +135,8 @@ export class AH {
 
   /**
    * Set agent status
-   * @param status Status of the agent (Allowed values: 'active', 'inactive')
-   * @param requestId Request UUID
+   * @param {String} status Status of the agent (Allowed values: 'active', 'inactive')
+   * @param {String} requestId Request UUID
    */
   public static SetAgentStatus = (status: string, reason: string, requestId: string): void => {
     AH.SendMessage({
@@ -151,7 +151,7 @@ export class AH {
 
   /**
    * Hang up all calls
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static HangupAllCalls = (requestId: string): void => {
     AH.SendMessage({
@@ -162,8 +162,8 @@ export class AH {
 
   /**
    * Transfer call to an IVR
-   * @param IVR IVR to transfer the call to
-   * @param requestId Request UUID
+   * @param {String} IVR IVR to transfer the call to
+   * @param {String} requestId Request UUID
    */
   public static TransferToIVR = (
     IVR: string | number,
@@ -180,8 +180,8 @@ export class AH {
 
   /**
    * Transfer call to a phone number
-   * @param phoneNumber Phone Number
-   * @param requestId Request UUID
+   * @param {String} phoneNumber Phone Number
+   * @param {String} requestId Request UUID
    */
   public static TransferToPhone = (
     phoneNumber: string | number,
@@ -198,8 +198,8 @@ export class AH {
 
   /**
    * Call a phone number
-   * @param phoneNumber Phone Number
-   * @param requestId Request UUID
+   * @param {String} phoneNumber Phone Number
+   * @param {String} requestId Request UUID
    */
   public static Call = (
     phoneNumber: string | number,
@@ -216,8 +216,8 @@ export class AH {
 
   /**
    * Toggle call recording status
-   * @param requestId Request UUID
-   * @param tracknum Tracking Number (optional)
+   * @param {String} requestId Request UUID
+   * @param {String} tracknum Tracking Number (optional)
    */
   public static ToggleCallRecordingStatus = (
     requestId: string,
@@ -234,8 +234,8 @@ export class AH {
 
   /**
    * Toggle call hold status
-   * @param requestId Request UUID
-   * @param tracknum Tracking Number (optional)
+   * @param {String} requestId Request UUID
+   * @param {String} tracknum Tracking Number (optional)
    */
   public static ToggleCallHoldStatus = (
     requestId: string,
@@ -252,8 +252,8 @@ export class AH {
 
   /**
    * Start a conference with an agent by his/her ID
-   * @param agentID Agent ID
-   * @param requestId Request UUID
+   * @param {String} agentID Agent ID
+   * @param {String} requestId Request UUID
    */
   public static SetupConferenceCallWithAgent = (
     agentID: string | number,
@@ -270,8 +270,8 @@ export class AH {
 
   /**
    * Start a conference with a phone number
-   * @param phoneNumber Phone Number
-   * @param requestId Request UUID
+   * @param {String} phoneNumber Phone Number
+   * @param {String} requestId Request UUID
    */
   public static SetupConferenceCallWithPhoneNumber = (
     phoneNumber: string | number,
@@ -288,7 +288,7 @@ export class AH {
 
   /**
    * Leave a conference
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static LeaveConference = (requestId: string): void => {
     AH.SendMessage({
@@ -299,7 +299,7 @@ export class AH {
 
   /**
    * Clear blocking modes of the status switcher
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static ClearBlockingModes = (requestId: string): void => {
     AH.SendMessage({
@@ -310,7 +310,7 @@ export class AH {
 
   /**
    * Get current list of calls
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static GetCurrentCallList = (requestId: string): void => {
     AH.SendMessage({
@@ -321,7 +321,7 @@ export class AH {
 
     /**
    * Get history of calls handled
-   * @param requestId Request UUID
+   * @param {String} requestId Request UUID
    */
   public static GetCallHistory = (requestId: string): void => {
     AH.SendMessage({
@@ -332,8 +332,8 @@ export class AH {
 
   /**
    * Get list of messages
-   * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
-   * @param requestId Request UUID
+   * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param {String} requestId Request UUID
    */
   public static GetMessages = (channelType: string, requestId: string): void => {
     AH.SendMessage({
@@ -347,8 +347,8 @@ export class AH {
 
   /**
    * Get list of accounts
-   * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
-   * @param requestId Request UUID
+   * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param {String} requestId Request UUID
    */
   public static GetAccounts = (channelType: string, requestId: string): void => {
     AH.SendMessage({
@@ -362,15 +362,15 @@ export class AH {
 
   /**
    * Create Outbound Email
-   * @param recipient 
-   * @param firstName 
-   * @param lastName 
-   * @param subject 
-   * @param cc 
-   * @param bcc 
-   * @param text 
-   * @param channelAccountID 
-   * @param requestId 
+   * @param {String} recipient Recipient email address
+   * @param {String} firstName First Name of the recipient
+   * @param {String} lastName Last Name of the recipient
+   * @param {String} subject Subject
+   * @param {String} cc CC
+   * @param {String} bcc BCC
+   * @param {String} text Message body
+   * @param {String} channelAccountID Channel Account to use
+   * @param {String} requestId Request UUID
    */
   public static ComposeEmailMessage = (
     recipient: string,
@@ -401,12 +401,12 @@ export class AH {
 
   /**
    * Create Outbound SMS
-   * @param recipient 
-   * @param firstName 
-   * @param lastName 
-   * @param text 
-   * @param channelAccountID 
-   * @param requestId 
+   * @param {String} recipient Recipient Phone Number
+   * @param {String} firstName First Name of the recipient
+   * @param {String} lastName Last Name of the recipient
+   * @param {String} text Message Body
+   * @param {String} channelAccountID Channel Account to use
+   * @param {String} requestId Request ID
    */
   public static ComposeSMSMessage = (
     recipient: string,
@@ -429,6 +429,11 @@ export class AH {
     });
   };
 
+  /**
+   * Mark interaction as read
+   * @param {String} interactionID Interaction ID
+   * @param {String} requestId Request UUID
+   */
   public static MarkInteractionAsRead = (
     interactionID: string,
     requestId: string
@@ -442,6 +447,14 @@ export class AH {
     });
   }
 
+  /**
+   * Add interation
+   * @param {String} threadID Thread ID
+   * @param {String} interactionID Interaction ID
+   * @param {String} to To address (required only for email)
+   * @param {String} text Message body
+   * @param {String} requestId Request UUID
+   */
   public static AddInteraction = (
     threadID: string,
     interactionID: string,
