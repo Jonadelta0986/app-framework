@@ -109,3 +109,43 @@ function GetMessages(channelType) {
 function GetAccounts(channelType) {
   AH.GetAccounts(channelType, generateRequestId());
 }
+
+function ComposeSMSMessage(
+  recipient,
+  firstName,
+  lastName,
+  text,
+  channelAccountID
+) {
+  AH.ComposeSMSMessage(
+    recipient,
+    firstName,
+    lastName,
+    text,
+    channelAccountID,
+    generateRequestId(),
+  )
+}
+
+function ComposeEmailMessage(
+  recipient,
+  firstName,
+  lastName,
+  subject,
+  cc,
+  bcc,
+  text,
+  channelAccountID,
+) {
+  AH.ComposeEmailMessage(
+    recipient,
+    firstName,
+    lastName,
+    subject,
+    cc,
+    bcc,
+    text,
+    channelAccountID,
+    generateRequestId(),
+  )
+}

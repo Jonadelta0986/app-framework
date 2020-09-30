@@ -332,6 +332,7 @@ export class AH {
   /**
    * Get list of messages
    * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param requestId Request UUID
    */
   public static GetMessages = (channelType: string, requestId: string): void => {
     AH.SendMessage({
@@ -346,6 +347,7 @@ export class AH {
   /**
    * Get list of accounts
    * @param channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param requestId Request UUID
    */
   public static GetAccounts = (channelType: string, requestId: string): void => {
     AH.SendMessage({
@@ -358,14 +360,26 @@ export class AH {
   };
 
   /**
-   * Compose an Outbound Email
-   * @param recipient Recipient
-   * @param text Message body
-   * @param requestId Request UUID
+   * Create Outbound Email
+   * @param recipient 
+   * @param firstName 
+   * @param lastName 
+   * @param subject 
+   * @param cc 
+   * @param bcc 
+   * @param text 
+   * @param channelAccountID 
+   * @param requestId 
    */
   public static ComposeEmailMessage = (
     recipient: string,
+    firstName: string,
+    lastName: string,
+    subject: string,
+    cc: string,
+    bcc: string,
     text: string,
+    channelAccountID: string,
     requestId: string,
   ): void => {
     AH.SendMessage({
@@ -373,20 +387,32 @@ export class AH {
       action: 'ComposeEmailMessage',
       message: {
         recipient,
+        firstName,
+        lastName,
+        subject,
+        cc,
+        bcc,
         text,
+        channelAccountID,
       },
     });
   };
 
   /**
-   * Compose an Outbound SMS
-   * @param recipient Recipient
-   * @param text Message body
-   * @param requestId Request UUID
+   * Create Outbound SMS
+   * @param recipient 
+   * @param firstName 
+   * @param lastName 
+   * @param text 
+   * @param channelAccountID 
+   * @param requestId 
    */
   public static ComposeSMSMessage = (
     recipient: string,
+    firstName: string,
+    lastName: string,
     text: string,
+    channelAccountID: string,
     requestId: string,
   ): void => {
     AH.SendMessage({
@@ -394,6 +420,9 @@ export class AH {
       action: 'ComposeSMSMessage',
       message: {
         recipient,
+        firstName,
+        lastName,
+        channelAccountID,
         text,
       },
     });
