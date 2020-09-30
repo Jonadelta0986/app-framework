@@ -93,6 +93,7 @@ AH.GetCurrentUser(requestId);
 /**
  * Set agent status
  * @param {String} status Status of the agent (Allowed values: 'active', 'inactive')
+ * @param {String} status Reason
  * @param {String} requestId Request UUID
  */
 AH.SetAgentStatus(status, reason, requestId);
