@@ -50,8 +50,8 @@ function GetCurrentUser() {
   AH.GetCurrentUser(generateRequestId());
 }
 
-function SetAgentStatus(status) {
-  AH.SetAgentStatus(status, generateRequestId());
+function SetAgentStatus(status, reason) {
+  AH.SetAgentStatus(status, reason, generateRequestId());
 }
 
 function HangupAllCalls() {

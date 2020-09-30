@@ -138,12 +138,13 @@ export class AH {
    * @param status Status of the agent (Allowed values: 'active', 'inactive')
    * @param requestId Request UUID
    */
-  public static SetAgentStatus = (status: string, requestId: string): void => {
+  public static SetAgentStatus = (status: string, reason: string, requestId: string): void => {
     AH.SendMessage({
       requestId,
       action: 'SetAgentStatus',
       message: {
         status,
+        reason,
       },
     });
   };
