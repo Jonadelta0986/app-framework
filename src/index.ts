@@ -136,6 +136,7 @@ export class AH {
   /**
    * Set agent status
    * @param {String} status Status of the agent (Allowed values: 'active', 'inactive')
+   * @param {String} reason Reason
    * @param {String} requestId Request UUID
    */
   public static SetAgentStatus = (status: string, reason: string, requestId: string): void => {
