@@ -30,6 +30,8 @@ function setupAH() {
   AH.init({
     url: 'YOUR_AHEEVA_AWA_URL', // example: https://awa.aheeva.com
     realm: 'YOUR_TENANT_REALM', // example: tenant1
+    hidden: true,
+    elementId: 'ELEMENT_ID',    // Element where you want to inject the iframe
   });
 }
 ```
@@ -296,3 +298,16 @@ AH.MarkInteractionAsRead(interactionID, requestId);
  */
 AH.AddInteraction(threadID, interactionID, to, text, requestId);
 ```
+
+## How to handle incoming data
+
+All the incoming data are handled by `AH.HandleEvent` event handler. You need to override this event handler according to your requirements. For example:
+
+```javascript
+AH.HandleEvent = (event) => {
+  const { eventType, module, direction, message, response } = event.data;
+  console.log({ eventType, module, direction, message, response });
+};
+```
+
+The incoming data contains the request UUID (which was sent from your app). This allows you to match the request from your app with the response from the Agent Application.
