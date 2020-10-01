@@ -46,7 +46,7 @@ Supported list of events:
 
 1. LoginAgent
 2. LogoutAgent
-3. AddInteraction
+3. GetCurrentUser
 4. SetAgentStatus
 5. HangupAllCalls
 6. TransferToIVR
