@@ -2,7 +2,7 @@
 
 ![build](https://github.com/aheeva/app-framework/workflows/build/badge.svg) ![release](https://github.com/aheeva/app-framework/workflows/release/badge.svg) [![npm version](https://badge.fury.io/js/%40aheeva%2Fapp-framework.svg)](https://badge.fury.io/js/%40aheeva%2Fapp-framework)
 
-Seemlessly integrate AheevaCCS into your application, written in TypeScript
+Seamlessly integrate AheevaCCS into your application, written in TypeScript
 
 ## Getting started
 
