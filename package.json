@@ -1,6 +1,6 @@
 {
   "name": "@aheeva/app-framework",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Seamlessly integrate your application with AheevaCCS, written in TypeScript",
   "main": "dist/aheeva.min.js",
   "dependencies": {},
