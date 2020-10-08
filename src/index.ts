@@ -333,7 +333,7 @@ export class AH {
 
   /**
    * Get list of messages
-   * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
    */
   public static GetMessages = (channelType: string, requestId: string): void => {
@@ -348,7 +348,7 @@ export class AH {
 
   /**
    * Get list of accounts
-   * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+   * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
    */
   public static GetAccounts = (channelType: string, requestId: string): void => {

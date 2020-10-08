@@ -119,13 +119,13 @@ export declare class AH {
     static GetCallHistory: (requestId: string) => void;
     /**
      * Get list of messages
-     * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+     * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
      * @param {String} requestId Request UUID
      */
     static GetMessages: (channelType: string, requestId: string) => void;
     /**
      * Get list of accounts
-     * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+     * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
      * @param {String} requestId Request UUID
      */
     static GetAccounts: (channelType: string, requestId: string) => void;

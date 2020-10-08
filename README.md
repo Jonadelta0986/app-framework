@@ -229,7 +229,7 @@ AH.GetCallHistory(requestId);
 ```javascript
 /**
  * Get list of messages
- * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+ * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
  * @param {String} requestId Request UUID
  */
 AH.GetMessages(channelType, requestId);
@@ -239,7 +239,7 @@ AH.GetMessages(channelType, requestId);
 ```javascript
 /**
  * Get list of accounts
- * @param {String} channelType Channel Type (Allowed values: 'SMS', 'WhatsApp', 'Twitter', 'Facebook', 'Email', 'ALL')
+ * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
  * @param {String} requestId Request UUID
  */
 AH.GetAccounts(channelType, requestId);
