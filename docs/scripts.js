@@ -30,15 +30,15 @@ function generateRequestId() {
 
 function setupAH() {
   // For opening your App inside AWA
-  AH.init();
+  // AH.init();
 
   // For opening the AWA inside your application in an iframe
-/*   AH.init({
-    url: 'https://beta.aheeva.dev',
+  AH.init({
+    url: 'http://127.0.0.1:3000',
     realm: 'aheeva',
     hidden: false,
     elementId: 'aheeva',
-  }); */
+  });
   setTab('general');
 }
 
