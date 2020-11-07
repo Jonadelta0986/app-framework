@@ -29,12 +29,16 @@ function generateRequestId() {
 }
 
 function setupAH() {
-  AH.init({
+  // For opening your App inside AWA
+  AH.init();
+
+  // For opening the AWA inside your application in an iframe
+/*   AH.init({
     url: 'https://beta.aheeva.dev',
     realm: 'aheeva',
     hidden: false,
     elementId: 'aheeva',
-  });
+  }); */
   setTab('general');
 }
 
