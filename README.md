@@ -36,7 +36,17 @@ function setupAH() {
 }
 ```
 
-The above snippet of code will initialize the agent application in a hidden iframe. For agents using WebRTC, make sure the `url` field in the init configuration is `https`. Once this step is done, you are ready to send and receive events from the AheevaCCS application through this app-framework library.
+The above snippet of code will initialize the agent application in a hidden iframe. For agents using WebRTC, make sure the `url` field in the init configuration is `https`. 
+
+Use the following syntax (instead of the one above) to open your application inside the AWA.
+```javascript
+// Some function in your application that deals with the setup process
+function setupAH() {
+  AH.init();
+}
+```
+
+Once this step is done, you are ready to send and receive events from the AheevaCCS application through this app-framework library.
 
 The following section provides description of all the events currently supported by this framework.
 
