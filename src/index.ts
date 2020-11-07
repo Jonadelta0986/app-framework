@@ -6,7 +6,7 @@ import { IConfig } from './models/IConfig';
 export default class AH {
   private static url: string = '';
   private static realm: string = '';
-  private static iframe: HTMLIFrameElement;
+  private static frame: Window;
   private static hidden: boolean = true;
   private static elementId: string = 'body';
   /**
@@ -18,18 +18,21 @@ export default class AH {
       window.addEventListener('message', AH.HandleEvent, false);
       (window as any).isListenerSet = true;
     }
-    const { url, realm, elementId, hidden } = config;
-    if (url && realm) {
-      AH.url = url;
-      AH.realm = realm;
-      AH.hidden = hidden;
-      if (elementId) {
+    if(config){
+      const { url, realm, elementId, hidden } = config;
+      if (url && realm && elementId) {
+        AH.url = url;
+        AH.realm = realm;
+        AH.hidden = hidden || false;
         AH.elementId = elementId;
+        AH.frame = AH.Setup();
+        console.log('Initialized Aheeva App Framework');
+      } else {
+        console.error('Fields: url, realm, elementId are required');
       }
-      AH.iframe = AH.Setup();
-      console.log('Initialized Aheeva App Framework');
     } else {
-      console.error('Fields: url, realm are required');
+      AH.frame = AH.Setup();
+      console.log('Initialized Aheeva App Framework');
     }
   };
 
@@ -68,24 +71,28 @@ export default class AH {
   /**
    * Setup the iframe element
    */
-  private static Setup = (): HTMLIFrameElement => {
-    let iframe = document.createElement('iframe');
-    iframe.id = 'aheeva_frame';
-    iframe.setAttribute(
-      'sandbox',
-      'allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts',
-    );
-    iframe.setAttribute('allow', 'camera;microphone');
-    iframe.style.visibility = AH.hidden ? 'hidden' : 'visible';
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.src = `${AH.url}?${AH.realm}`;
-    if (AH.elementId === 'body') {
-      document.body.appendChild(iframe);
+  private static Setup = (): Window => {
+    if(AH.url && AH.realm){
+      let iframe = document.createElement('iframe');
+      iframe.id = 'aheeva_frame';
+      iframe.setAttribute(
+        'sandbox',
+        'allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts',
+      );
+      iframe.setAttribute('allow', 'camera;microphone');
+      iframe.style.visibility = AH.hidden ? 'hidden' : 'visible';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.src = `${AH.url}?${AH.realm}`;
+      if (AH.elementId === 'body') {
+        document.body.appendChild(iframe);
+      } else {
+        document.getElementById(AH.elementId)?.appendChild(iframe);
+      }
+      return (<HTMLIFrameElement>document.getElementById(iframe.id)).contentWindow!;
     } else {
-      document.getElementById(AH.elementId)?.appendChild(iframe);
+      return window.parent;
     }
-    return <HTMLIFrameElement>document.getElementById(iframe.id);
   };
 
   /**
@@ -93,7 +100,7 @@ export default class AH {
    * @param {String} body Body of the event
    */
   private static SendMessage = (body: any): void => {
-    AH.iframe.contentWindow?.postMessage(
+    AH.frame.postMessage(
       {
         ...body,
         requester: 'AheevaAppFrameWork',
