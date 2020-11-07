@@ -16,8 +16,10 @@ module.exports = {
   },
   mode: 'production',
   output: {
-    filename: 'aheeva.min.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'window',
+    filename: `aheeva.min.js`,
+    library: 'AH',
+    libraryExport: 'default',
+    libraryTarget: 'umd',
+    globalObject: 'this',
   },
 };

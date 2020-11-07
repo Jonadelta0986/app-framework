@@ -1,6 +1,6 @@
 {
   "name": "@aheeva/app-framework",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Seamlessly integrate your application with AheevaCCS, written in TypeScript",
   "main": "dist/aheeva.min.js",
   "dependencies": {},
@@ -18,9 +18,8 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "build": "npm run clean && webpack && npm run copy && npm run copy-types",
+    "build": "npm run clean && webpack && npm run copy",
     "copy": "gulp copy",
-    "copy-types": "gulp copy-types",
     "clean": "gulp clean",
     "minify": "gulp minify",
     "lint": "prettier --write src"

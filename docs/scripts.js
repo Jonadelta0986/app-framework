@@ -30,7 +30,7 @@ function generateRequestId() {
 
 function setupAH() {
   AH.init({
-    url: 'http://127.0.0.1:3000',
+    url: 'https://beta.aheeva.dev',
     realm: 'aheeva',
     hidden: false,
     elementId: 'aheeva',

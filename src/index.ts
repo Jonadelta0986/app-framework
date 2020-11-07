@@ -3,7 +3,7 @@ import { IConfig } from './models/IConfig';
 /**
  * Initialize the framework
  */
-export class AH {
+export default class AH {
   private static url: string = '';
   private static realm: string = '';
   private static iframe: HTMLIFrameElement;
@@ -38,11 +38,23 @@ export class AH {
    */
   public static HandleEvent = (event: any) => {
     const { eventType, module, direction, message, response } = event.data;
-    const text = JSON.stringify({ module, eventType, direction, message, response });
+    const text = JSON.stringify({
+      module,
+      eventType,
+      direction,
+      message,
+      response,
+    });
     if (text.indexOf('WakeUp') == -1) {
       try {
         let d = document.createElement('div');
-        d.innerText = `↑ ${new Date().toISOString()}: ${JSON.stringify({ module, eventType, direction, message, response })}`;
+        d.innerText = `↑ ${new Date().toISOString()}: ${JSON.stringify({
+          module,
+          eventType,
+          direction,
+          message,
+          response,
+        })}`;
         let console = document.getElementById('console');
         if (console) {
           console.insertBefore(d, console.firstChild);
@@ -139,7 +151,11 @@ export class AH {
    * @param {String} reason Reason
    * @param {String} requestId Request UUID
    */
-  public static SetAgentStatus = (status: string, reason: string, requestId: string): void => {
+  public static SetAgentStatus = (
+    status: string,
+    reason: string,
+    requestId: string,
+  ): void => {
     AH.SendMessage({
       requestId,
       action: 'SetAgentStatus',
@@ -320,7 +336,7 @@ export class AH {
     });
   };
 
-    /**
+  /**
    * Get history of calls handled
    * @param {String} requestId Request UUID
    */
@@ -336,13 +352,16 @@ export class AH {
    * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
    */
-  public static GetMessages = (channelType: string, requestId: string): void => {
+  public static GetMessages = (
+    channelType: string,
+    requestId: string,
+  ): void => {
     AH.SendMessage({
       requestId,
       action: 'GetMessages',
       message: {
         channelType,
-      }
+      },
     });
   };
 
@@ -351,13 +370,16 @@ export class AH {
    * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
    */
-  public static GetAccounts = (channelType: string, requestId: string): void => {
+  public static GetAccounts = (
+    channelType: string,
+    requestId: string,
+  ): void => {
     AH.SendMessage({
       requestId,
       action: 'GetAccounts',
       message: {
         channelType,
-      }
+      },
     });
   };
 
@@ -437,16 +459,16 @@ export class AH {
    */
   public static MarkInteractionAsRead = (
     interactionID: string,
-    requestId: string
+    requestId: string,
   ) => {
     AH.SendMessage({
       requestId,
       action: 'MarkInteractionAsRead',
       message: {
-        interactionID
+        interactionID,
       },
     });
-  }
+  };
 
   /**
    * Add interation
@@ -461,7 +483,7 @@ export class AH {
     interactionID: string,
     to: any,
     text: string,
-    requestId: string
+    requestId: string,
   ) => {
     AH.SendMessage({
       requestId,
@@ -473,6 +495,5 @@ export class AH {
         text,
       },
     });
-  }
-
+  };
 }
