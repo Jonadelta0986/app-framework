@@ -10,7 +10,7 @@ This documentation assumes you have an existing AheevaCCS installation at your p
 
 ### Steps:
 
-1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page.
+1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page. The library is extremely small ~5.0 KB (minified). It should load almost instantly.
 
 ```html
 <head>
@@ -20,7 +20,12 @@ This documentation assumes you have an existing AheevaCCS installation at your p
 </head>
 ```
 
-The library is extremely small ~5.0 KB (minified). It should load almost instantly.
+If you are using `npm` to install packages, you can also install this library by typing:
+```bash
+npm install --save @aheeva/app-framework
+```
+
+Include `./node_modules/@aheeva/app-framework/dist/aheeva.min.js` to your gulp/grunt/webpack configuration as needed.
 
 2. Initialize the framework as follows
 
