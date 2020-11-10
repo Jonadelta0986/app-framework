@@ -1,6 +1,6 @@
 # app-framework
 
-![build](https://github.com/aheeva/app-framework/workflows/build/badge.svg) ![release](https://github.com/aheeva/app-framework/workflows/release/badge.svg) [![npm version](https://badge.fury.io/js/%40aheeva%2Fapp-framework.svg)](https://badge.fury.io/js/%40aheeva%2Fapp-framework)
+![build](https://github.com/aheeva/app-framework/workflows/build/badge.svg) ![release](https://github.com/aheeva/app-framework/workflows/release/badge.svg) [![npm version](https://badge.fury.io/js/%40aheeva%2Fapp-framework.svg)](https://badge.fury.io/js/%40aheeva%2Fapp-framework) ![minzip](https://badgen.net/bundlephobia/minzip/@aheeva/app-framework)
 
 Seamlessly integrate AheevaCCS into your application, written in TypeScript
 
@@ -10,7 +10,7 @@ This documentation assumes you have an existing AheevaCCS installation at your p
 
 ### Steps:
 
-1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page. The library is extremely small ~5.0 KB (minified). It should load almost instantly.
+1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page. The library is extremely small ~1.8 KB (minified). It should load almost instantly.
 
 ```html
 <head>
