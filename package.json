@@ -22,7 +22,8 @@
     "copy": "gulp copy",
     "clean": "gulp clean",
     "minify": "gulp minify",
-    "lint": "prettier --write src"
+    "lint": "prettier --write src",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,9 @@
   "homepage": "https://github.com/aheeva/app-framework#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  }
+  },
+  "files": [
+    "dist",
+    "docs"
+  ]
 }
