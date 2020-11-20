@@ -81,6 +81,7 @@ Supported list of events:
 20. ComposeSMSMessage
 21. MarkInteractionAsRead
 22. AddInteraction
+23. ConfirmExtension
 
 Usage:
 
@@ -312,6 +313,15 @@ AH.MarkInteractionAsRead(interactionID, requestId);
  * @param {String} requestId Request UUID
  */
 AH.AddInteraction(threadID, interactionID, to, text, requestId);
+```
+#### Auto Confirm Extension
+
+```javascript
+/**
+ * Confirm Default Extension of the agent
+ * @param {String} requestId Request UUID
+ */
+AH.AutoConfirmExtension(requestId);
 ```
 
 ## How to handle incoming data

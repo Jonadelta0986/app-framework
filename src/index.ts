@@ -174,6 +174,17 @@ export default class AH {
   };
 
   /**
+   * Auto Confirm Default Extension of the agent
+   * @param {String} requestId Request UUID
+   */
+  public static AutoConfirmExtension = (requestId: string) => {
+    AH.SendMessage({
+      requestId,
+      action: 'AutoConfirmExtension'
+    });
+  }
+
+  /**
    * Hang up all calls
    * @param {String} requestId Request UUID
    */
