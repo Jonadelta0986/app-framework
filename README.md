@@ -81,7 +81,9 @@ Supported list of events:
 20. ComposeSMSMessage
 21. MarkInteractionAsRead
 22. AddInteraction
-23. ConfirmExtension
+23. AutoConfirmExtension
+24. GetDispositionList
+25. SetDisposition
 
 Usage:
 
@@ -322,6 +324,24 @@ AH.AddInteraction(threadID, interactionID, to, text, requestId);
  * @param {String} requestId Request UUID
  */
 AH.AutoConfirmExtension(requestId);
+```
+
+```javascript
+/**
+ * Get list of dispositions
+ * @param {String} requestId Request UUID
+ */
+AH.GetDispositionList(requestId);
+```
+
+```javascript
+/**
+ * Set Disposition
+ * @param {String} dispositionID Disposition ID
+ * @param {String} threadID Thread ID
+ * @param {String} requestId Request UUID
+ */
+AH.SetDisposition(dispositionID, threadID, requestId);
 ```
 
 ## How to handle incoming data

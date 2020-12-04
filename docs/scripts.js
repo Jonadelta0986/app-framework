@@ -110,6 +110,14 @@ function GetMessages(channelType) {
   AH.GetMessages(channelType, generateRequestId());
 }
 
+function GetDispositionList() {
+  AH.GetDispositionList(generateRequestId());
+}
+
+function SetDisposition(dispositionID, threadID) {
+  AH.SetDisposition(dispositionID, threadID, generateRequestId());
+}
+
 function GetAccounts(channelType) {
   AH.GetAccounts(channelType, generateRequestId());
 }

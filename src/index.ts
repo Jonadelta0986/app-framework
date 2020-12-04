@@ -514,4 +514,36 @@ export default class AH {
       },
     });
   };
+
+  /**
+   * Get list of dispositions
+   * @param {String} requestId Request UUID
+   */
+  public static GetDispositionList = (requestId: string): void => {
+    AH.SendMessage({
+      requestId,
+      action: 'GetDispositionList',
+    });
+  };
+
+  /**
+   * Set Disposition
+   * @param {String} dispositionID Disposition ID
+   * @param {String} threadID Thread ID
+   * @param {String} requestId Request UUID
+   */
+  public static SetDisposition = (
+    dispositionID: string,
+    threadID: string,
+    requestId: string,
+  ) => {
+    AH.SendMessage({
+      requestId,
+      action: 'SetDisposition',
+      message: {
+        threadID,
+        dispositionID,
+      },
+    });
+  };
 }
