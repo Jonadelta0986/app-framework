@@ -326,6 +326,8 @@ AH.AddInteraction(threadID, interactionID, to, text, requestId);
 AH.AutoConfirmExtension(requestId);
 ```
 
+#### Get list of dispositions
+
 ```javascript
 /**
  * Get list of dispositions
@@ -333,6 +335,7 @@ AH.AutoConfirmExtension(requestId);
  */
 AH.GetDispositionList(requestId);
 ```
+#### Set Disposition
 
 ```javascript
 /**
