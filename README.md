@@ -362,4 +362,4 @@ The incoming data contains the request UUID (which was sent from your app). This
 
 ## Example
 
-For a sample integration, refer to the `docs` folder.
+For a sample integration, refer to the example in the `docs` folder.
