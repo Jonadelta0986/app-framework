@@ -1,4 +1,37 @@
 import { IConfig } from './models/IConfig';
+declare let rxjs: any;
+
+let script = document.createElement("script");
+script.src = 'https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.3/rxjs.umd.min.js';
+document.head.appendChild(script);
+
+(window as any).RXJS_BEHAVIOR_SUBJECT = new rxjs.BehaviorSubject({});
+
+/**
+ * Event Handler
+ * @param {any} data Event data
+ */
+const HandleEvent = (data: any) => {
+  const { direction, eventType, message: { action, requestId }, response } = data;
+  if(direction === 'incoming' && eventType === 'AWA_TO_APP' && action && requestId && data.hasOwnProperty('response')) {
+    (window as any).RXJS_BEHAVIOR_SUBJECT.next({requestId, response});
+  }
+}
+
+/**
+ * Get Response
+ * @param {String}requestID Request UUID
+ * @returns {Promise<any>} A promise that resolves to the response
+ */
+const GetResponse = (requestID: string): Promise<any> => {
+  return new Promise((resolve: any, _: any) => {
+    (window as any).RXJS_BEHAVIOR_SUBJECT.subscribe((result: any) => {
+      if(result.requestId === requestID){
+        resolve(result.response);
+      }
+    });
+  });
+}
 
 /**
  * Initialize the framework
@@ -66,6 +99,7 @@ export default class AH {
         console.error(error);
       }
     }
+    HandleEvent({ eventType, module, direction, message, response });
   };
 
   /**
@@ -144,12 +178,14 @@ export default class AH {
   /**
    * Get Current User Details
    * @param {String} requestId Request UUID
+   * @returns {Promise<any>} A promise that resolves to the response
    */
-  public static GetCurrentUser = (requestId: string): void => {
+  public static GetCurrentUser = (requestId: string): Promise<any> => {
     AH.SendMessage({
       requestId,
       action: 'GetCurrentUser',
     });
+    return GetResponse(requestId);
   };
 
   /**
@@ -346,34 +382,39 @@ export default class AH {
   /**
    * Get current list of calls
    * @param {String} requestId Request UUID
+   * @returns {Promise<any>} A promise that resolves to the response
    */
-  public static GetCurrentCallList = (requestId: string): void => {
+  public static GetCurrentCallList = (requestId: string): Promise<any> => {
     AH.SendMessage({
       requestId,
       action: 'GetCurrentCallList',
     });
+    return GetResponse(requestId);
   };
 
   /**
    * Get history of calls handled
    * @param {String} requestId Request UUID
+   * @returns {Promise<any>} A promise that resolves to the response
    */
-  public static GetCallHistory = (requestId: string): void => {
+  public static GetCallHistory = (requestId: string): Promise<any> => {
     AH.SendMessage({
       requestId,
       action: 'GetCallHistory',
     });
+    return GetResponse(requestId);
   };
 
   /**
    * Get list of messages
    * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
+   * @returns {Promise<any>} A promise that resolves to the response
    */
   public static GetMessages = (
     channelType: string,
     requestId: string,
-  ): void => {
+  ): Promise<any> => {
     AH.SendMessage({
       requestId,
       action: 'GetMessages',
@@ -381,17 +422,19 @@ export default class AH {
         channelType,
       },
     });
+    return GetResponse(requestId);
   };
 
   /**
    * Get list of accounts
    * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
+   * @returns {Promise<any>} A promise that resolves to the response
    */
   public static GetAccounts = (
     channelType: string,
     requestId: string,
-  ): void => {
+  ): Promise<any> => {
     AH.SendMessage({
       requestId,
       action: 'GetAccounts',
@@ -399,6 +442,7 @@ export default class AH {
         channelType,
       },
     });
+    return GetResponse(requestId);
   };
 
   /**
@@ -518,12 +562,14 @@ export default class AH {
   /**
    * Get list of dispositions
    * @param {String} requestId Request UUID
+   * @returns {Promise<any>} A promise that resolves to the response
    */
-  public static GetDispositionList = (requestId: string): void => {
+  public static GetDispositionList = (requestId: string): Promise<any> => {
     AH.SendMessage({
       requestId,
       action: 'GetDispositionList',
     });
+    return GetResponse(requestId);
   };
 
   /**

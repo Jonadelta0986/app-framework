@@ -51,7 +51,12 @@ function LogoutAgent() {
 }
 
 function GetCurrentUser() {
-  AH.GetCurrentUser(generateRequestId());
+  AH.GetCurrentUser(generateRequestId()).then((response) => {
+    const json = response;
+    console.warn('Response:', json);
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function SetAgentStatus(status, reason) {
@@ -99,19 +104,39 @@ function ClearBlockingModes() {
 }
 
 function GetCurrentCallList() {
-  AH.GetCurrentCallList(generateRequestId());
+  AH.GetCurrentCallList(generateRequestId()).then((response) => {
+    const json = response;
+    console.warn('Response:', json);
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function GetCallHistory() {
-  AH.GetCallHistory(generateRequestId());
+  AH.GetCallHistory(generateRequestId()).then((response) => {
+    const json = response;
+    console.warn('Response:', json);
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function GetMessages(channelType) {
-  AH.GetMessages(channelType, generateRequestId());
+  AH.GetMessages(channelType, generateRequestId()).then((response) => {
+    const json = response;
+    console.warn('Response:', json);
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function GetDispositionList() {
-  AH.GetDispositionList(generateRequestId());
+  AH.GetDispositionList(generateRequestId()).then((response) => {
+    const json = response;
+    console.warn('Response:', json);
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function SetDisposition(dispositionID, threadID) {
@@ -119,7 +144,12 @@ function SetDisposition(dispositionID, threadID) {
 }
 
 function GetAccounts(channelType) {
-  AH.GetAccounts(channelType, generateRequestId());
+  AH.GetAccounts(channelType, generateRequestId()).then((response) => {
+    const json = response;
+    console.warn('Response:', json);
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function ComposeSMSMessage(

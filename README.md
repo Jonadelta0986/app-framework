@@ -113,6 +113,7 @@ AH.LogoutAgent(requestId);
 /**
  * Get Current User Details
  * @param {String} requestId Request UUID
+ * @returns {Promise<any>} A promise that resolves to the response
  */
 AH.GetCurrentUser(requestId);
 ```
@@ -230,6 +231,7 @@ AH.ClearBlockingModes(requestId);
 /**
  * Get current list of calls
  * @param {String} requestId Request UUID
+ * @returns {Promise<any>} A promise that resolves to the response
  */
 AH.GetCurrentCallList(requestId);
 ```
@@ -239,6 +241,7 @@ AH.GetCurrentCallList(requestId);
 /**
 * Get history of calls handled
 * @param {String} requestId Request UUID
+* @returns {Promise<any>} A promise that resolves to the response
 */
 AH.GetCallHistory(requestId);
 ```
@@ -249,6 +252,7 @@ AH.GetCallHistory(requestId);
  * Get list of messages
  * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
  * @param {String} requestId Request UUID
+ * @returns {Promise<any>} A promise that resolves to the response
  */
 AH.GetMessages(channelType, requestId);
 ```
@@ -259,6 +263,7 @@ AH.GetMessages(channelType, requestId);
  * Get list of accounts
  * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
  * @param {String} requestId Request UUID
+ * @returns {Promise<any>} A promise that resolves to the response
  */
 AH.GetAccounts(channelType, requestId);
 ```
@@ -332,6 +337,7 @@ AH.AutoConfirmExtension(requestId);
 /**
  * Get list of dispositions
  * @param {String} requestId Request UUID
+ * @returns {Promise<any>} A promise that resolves to the response
  */
 AH.GetDispositionList(requestId);
 ```
@@ -346,20 +352,6 @@ AH.GetDispositionList(requestId);
  */
 AH.SetDisposition(dispositionID, threadID, requestId);
 ```
-
-## How to handle incoming data
-
-All the incoming data are handled by `AH.HandleEvent` event handler. You need to override this event handler according to your requirements. For example:
-
-```javascript
-AH.HandleEvent = (event) => {
-  const { eventType, module, direction, message, response } = event.data;
-  console.log({ eventType, module, direction, message, response });
-};
-```
-
-The incoming data contains the request UUID (which was sent from your app). This allows you to match the request from your app with the response from the Agent Application.
-
 ## Example
 
 For a sample integration, refer to the example in the `docs` folder.
