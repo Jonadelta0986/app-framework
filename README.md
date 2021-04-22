@@ -10,7 +10,7 @@ This documentation assumes you have an existing AheevaCCS installation at your p
 
 ### Steps:
 
-1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page. The library is extremely small ~1.8 KB (minified). It should load almost instantly.
+1. Include the provided library in your web application. This can be done adding a script tag inside `<head></head>` tags in the HTML page. The library is extremely small ~2.1 KB (minified). It should load almost instantly.
 
 ```html
 <head>
