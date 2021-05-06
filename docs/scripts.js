@@ -35,7 +35,7 @@ function setupAH() {
   // For opening the AWA inside your application in an iframe
   AH.init({
     url: 'http://127.0.0.1:3000',
-    realm: 'aheeva',
+    realm: 'aveeha',
     hidden: false,
     elementId: 'aheeva',
   });
@@ -119,6 +119,14 @@ function GetCallHistory() {
   }).catch((error) => {
     console.error(error);
   });
+}
+
+function AnswerNonForcedCall() {
+  AH.AnswerNonForcedCall(generateRequestId());
+}
+
+function RejectNonForcedCall() {
+  AH.RejectNonForcedCall(generateRequestId());
 }
 
 function GetMessages(channelType) {

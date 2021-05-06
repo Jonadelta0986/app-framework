@@ -406,6 +406,28 @@ export default class AH {
   };
 
   /**
+  * Answer Non Forced calls
+  * @param {String} requestId Request UUID
+  */
+  public static AnswerNonForcedCall = (requestId: string): void => {
+    AH.SendMessage({
+      requestId,
+      action: 'AnswerNonForcedCall',
+    });
+  };
+  
+  /** 
+  * Answer Non Forced calls
+  * @param {String} requestId Request UUID
+  */
+  public static RejectNonForcedCall = (requestId: string): void => {
+    AH.SendMessage({
+      requestId,
+      action: 'RejectNonForcedCall',
+    });
+  };
+
+  /**
    * Get list of messages
    * @param {String} channelType Channel Type (Allowed values: 'SMS', 'Whatsapp', 'Twitter', 'Facebook', 'Email', 'ALL')
    * @param {String} requestId Request UUID
