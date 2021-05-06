@@ -177,9 +177,9 @@ AH.Call(phoneNumber, requestId);
  /**
   * Answer Non Forced calls
   * @param {String} requestId Request UUID
-  * @param {String} message Text to display in the status box/timer aheeva's iframe
+  * @param {String} message Text to display in the status box/timer aheeva's iframe (optional)
   */
-AH.AnswerNonForcedCall(generateRequestId(), message);
+AH.AnswerNonForcedCall(requestId, message);
 ```
 
 #### Reject a Non Forced Call
