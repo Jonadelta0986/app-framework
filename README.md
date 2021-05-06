@@ -76,7 +76,7 @@ Supported list of events:
 15. LeaveConference
 16. ClearBlockingModes
 17. GetCurrentCallList
-18 GetCallHistory
+18. GetCallHistory
 19. GetMessages
 20. GetAccounts
 21. ComposeEmailMessage
