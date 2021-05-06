@@ -67,6 +67,8 @@ Supported list of events:
 6. TransferToIVR
 7. TransferToPhone
 8. Call
+26. AnswerNonForcedCall
+27. RejectNonForcedCall
 9. ToggleCallRecordingStatus
 10. ToggleCallHoldStatus
 11. SetupConferenceCallWithAgent
@@ -84,6 +86,7 @@ Supported list of events:
 23. AutoConfirmExtension
 24. GetDispositionList
 25. SetDisposition
+
 
 Usage:
 
@@ -167,6 +170,29 @@ AH.TransferToPhone(phoneNumber, requestId);
  */
 AH.Call(phoneNumber, requestId);
 ```
+
+#### Answer a Non Forced Call
+
+```javascript
+ /**
+  * Answer Non Forced calls
+  * @param {String} requestId Request UUID
+  * @param {String} message Text to display in the status box/timer aheeva's iframe
+  */
+AH.AnswerNonForcedCall(generateRequestId(), message);
+```
+
+#### Reject a Non Forced Call
+
+```javascript
+ /** 
+  * Reject Non Forced calls
+  * @param {String} requestId Request UUID
+  */
+
+AH.RejectNonForcedCall(generateRequestId());
+```
+
 #### Toggle call recording status
 
 ```javascript

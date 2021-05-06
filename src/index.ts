@@ -409,15 +409,16 @@ export default class AH {
   * Answer Non Forced calls
   * @param {String} requestId Request UUID
   */
-  public static AnswerNonForcedCall = (requestId: string): void => {
+  public static AnswerNonForcedCall = (requestId: string, message: string): void => {
     AH.SendMessage({
       requestId,
       action: 'AnswerNonForcedCall',
+      message
     });
   };
   
   /** 
-  * Answer Non Forced calls
+  * Reject Non Forced calls
   * @param {String} requestId Request UUID
   */
   public static RejectNonForcedCall = (requestId: string): void => {
