@@ -67,25 +67,25 @@ Supported list of events:
 6. TransferToIVR
 7. TransferToPhone
 8. Call
-26. AnswerNonForcedCall
-27. RejectNonForcedCall
-9. ToggleCallRecordingStatus
-10. ToggleCallHoldStatus
-11. SetupConferenceCallWithAgent
-12. SetupConferenceCallWithPhoneNumber
-13. LeaveConference
-14. ClearBlockingModes
-15. GetCurrentCallList
-16. GetCallHistory
-17. GetMessages
-18. GetAccounts
-19. ComposeEmailMessage
-20. ComposeSMSMessage
-21. MarkInteractionAsRead
-22. AddInteraction
-23. AutoConfirmExtension
-24. GetDispositionList
-25. SetDisposition
+9. AnswerNonForcedCall
+10. RejectNonForcedCall
+11. ToggleCallRecordingStatus
+12. ToggleCallHoldStatus
+13. SetupConferenceCallWithAgent
+14. SetupConferenceCallWithPhoneNumber
+15. LeaveConference
+16. ClearBlockingModes
+17. GetCurrentCallList
+18 GetCallHistory
+19. GetMessages
+20. GetAccounts
+21. ComposeEmailMessage
+22. ComposeSMSMessage
+23. MarkInteractionAsRead
+24. AddInteraction
+25. AutoConfirmExtension
+26. GetDispositionList
+27. SetDisposition
 
 
 Usage:
