@@ -121,13 +121,8 @@ function GetCallHistory() {
   });
 }
 
-<<<<<<< HEAD
-function AnswerNonForcedCall() {
-  AH.AnswerNonForcedCall(generateRequestId());
-=======
-function AnswerNonForcedCall(message="") {
+function AnswerNonForcedCall(message = "") {
   AH.AnswerNonForcedCall(generateRequestId(), message);
->>>>>>> bb80dd8... CCS8-459 - Agent Application Front end API: Add accept and reject actions for non forced or preview mode
 }
 
 function RejectNonForcedCall() {

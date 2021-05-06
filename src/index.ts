@@ -408,6 +408,7 @@ export default class AH {
   /**
   * Answer Non Forced calls
   * @param {String} requestId Request UUID
+  * @param {String} message Text to display in the status box/timer aheeva's iframe (optional)
   */
   public static AnswerNonForcedCall = (requestId: string, message: string): void => {
     AH.SendMessage({
